@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class StringsProgram {
     public static void main(String[] args) {
         System.out.println("Input text:");
-        String[] arrayWords = readWordsFromConsole(5);
+        String[] arrayWords = readWordsFromConsole(3);
         System.out.println("Output text: ");
         printReverseResult(arrayWords);
     }
