@@ -14,7 +14,7 @@ public class Main {
         p4.changeName("Zhong", "Li");
         p4.setBrithYear(-4000);
         Person p5 = new Person();
-        //Can`t create methods that change firstname or firs and last names...
+        //Can create methods that change firstname or firs and last names...
         //How to create methods that change only lastname??? How do they know???
         p5.changeName("Hu");
         p5.changeName("", "Tao");
