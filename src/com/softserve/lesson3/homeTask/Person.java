@@ -1,4 +1,4 @@
-package HomeTask;
+package com.softserve.lesson3.homeTask;
 
 public class Person {
     private String firstName;

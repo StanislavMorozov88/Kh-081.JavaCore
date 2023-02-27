@@ -1,4 +1,4 @@
-package com.softserve.lesson1.homeTask;
+package com.softserve.lesson3.homeTask;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

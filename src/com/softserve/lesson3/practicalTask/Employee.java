@@ -1,3 +1,4 @@
+package com.softserve.lesson3.practicalTask;
 public class Employee {
     private  String name;
     private  int rate;

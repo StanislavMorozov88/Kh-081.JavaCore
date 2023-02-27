@@ -1,4 +1,4 @@
-package com.softserve.lesson1.practicalTask
+package com.softserve.lesson1.practicalTask;
 
 import java.io.BufferedReader;
 import java.io.IOException;

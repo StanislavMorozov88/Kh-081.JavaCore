@@ -1,3 +1,5 @@
+package com.softserve.lesson3.practicalTask;
+
 public class Main {
     public static void main(String[] args) {
         Employee e1 = new Employee("Oleg");
