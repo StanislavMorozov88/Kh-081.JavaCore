@@ -38,12 +38,12 @@ public class Person {
         System.out.println("\n Your name is " + firstName +
                 "\n Your surname is " + lastName +
                 "\n Your birth year is " + birthYear +
-                "\n Your age is  " + getAge()+
+                "\n Your age is  " + getAge() +
                 "\n ===============================");
 
     }
 
-    public void changeName( String fn, String ln) {
+    public void changeName(String fn, String ln) {
         lastName = ln;
         firstName = fn;
 
@@ -97,8 +97,8 @@ public class Person {
         p5.setBirthYear(1991);
         p5.output();
 
-        Person p6 =new Person();
-        p6.changeName("Nick","Fury");
+        Person p6 = new Person();
+        p6.changeName("Nick", "Fury");
         p6.setBirthYear(1960);
         p6.output();
 
@@ -106,6 +106,6 @@ public class Person {
         p7.input();
         p7.output();
 
-
+        System.out.println("hello world");
     }
 }
