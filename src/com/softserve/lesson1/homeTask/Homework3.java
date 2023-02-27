@@ -1,3 +1,5 @@
+package com.softserve.lesson1.homeTask
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
