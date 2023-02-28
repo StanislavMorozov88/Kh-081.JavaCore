@@ -1,0 +1,27 @@
+import java.lang.String;
+public class Information {
+
+    public static void main(String[] args){
+        Person p1 = new Person("Vika", "Levina");
+        Person p2 = new Person("Valera", "Levanskiy");
+        Person p3 = new Person("Marina", "Tymko");
+        Person p4 = new Person("Nadya", "Pelzer");
+        Person p5 = new Person("Masha", "Zubr");
+
+
+        //p1.changeName("Katya", "Tyrina");
+        p1.setBirthYear(1996);
+        p1.output();
+        //p1.changeName(String fn, String ln);
+        p2.setBirthYear(1953);
+        p2.output();
+        p3.setBirthYear(1999);
+        p3.output();
+        p4.setBirthYear(2005);
+        p4.output();
+        p5.setBirthYear(2019);
+        p5.output();
+
+    }
+
+}
