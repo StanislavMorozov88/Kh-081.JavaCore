@@ -27,6 +27,7 @@ public class OddNumbers {
             count++;
         }
         System.out.println("The count of odd numbers is " + count);
+        br.close();
     }
 
 

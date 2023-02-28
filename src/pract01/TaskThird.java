@@ -23,6 +23,7 @@ public class TaskThird {
 
         int div = a / b;
         System.out.println("Division is " + div);
+        br.close();
 
     }
 }

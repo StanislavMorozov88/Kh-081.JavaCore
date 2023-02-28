@@ -11,6 +11,6 @@ public class TaskFourth {
         String answer = br.readLine();
 
         System.out.println("You are "+ answer);
-
+        br.close();
     }
 }

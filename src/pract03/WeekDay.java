@@ -40,6 +40,7 @@ public class WeekDay {
         }
 
         System.out.println(weekday);
+        br.close();
     }
 
 }

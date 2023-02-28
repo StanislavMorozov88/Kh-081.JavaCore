@@ -20,5 +20,6 @@ public class TaskFirst {
         System.out.println(str2);
         System.out.println(str1);
 
+        br.close();
     }
 }

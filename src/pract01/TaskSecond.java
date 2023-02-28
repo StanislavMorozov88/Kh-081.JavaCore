@@ -23,6 +23,7 @@ public class TaskSecond {
         float average = sum / numbers.length;
 
         System.out.println("Average is "+average);
+        br.close();
 
     }
 }
