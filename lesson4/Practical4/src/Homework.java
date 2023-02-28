@@ -1,9 +1,10 @@
 import java.util.Scanner;
 
-public class Main {
+public class Homework {
     public static void main(String[] args) {
-       // homeWorkFirst();
-       // homeWorkSecond();
+        homeWorkFirst();
+        homeWorkSecond();
+        homeWorkThird();
 
     }
 
@@ -41,20 +42,38 @@ public class Main {
         int b = scanner.nextInt();
         System.out.println("enter number:");
         int c = scanner.nextInt();
-        int max=a;
-        int min=a;
-        if (b>max) {
-            max=b;
-        } else if (max<c) {
-            max=c;
+        int max = a;
+        int min = a;
+        if (b > max) {
+            max = b;
+        } else if (max < c) {
+            max = c;
         }
-        if (min >b) {
-            min=b;
-        } else if (min>c) {
-            min=c;
+        if (min > b) {
+            min = b;
+        } else if (min > c) {
+            min = c;
         }
-        System.out.println("max number:" + max + "\nmin number:" +min);
+        System.out.println("max number:" + max + "\nmin number:" + min);
         scanner.close();
+    }
+
+    public static void homeWorkThird() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number error");
+        int whatTheError = scanner.nextInt();
+        if (whatTheError == 100 || whatTheError == 101 || whatTheError == 102 || whatTheError == 103) {
+            System.out.println(WhatTheError.INFO);
+        }
+        if (whatTheError == 200 || whatTheError == 201 || whatTheError == 202) {
+            System.out.println(WhatTheError.SUCCESS);
+        }
+        if (whatTheError == 300 || whatTheError == 301 || whatTheError == 302) {
+            System.out.println(WhatTheError.REDIRECTION);
+        }
+        if (whatTheError == 400 || whatTheError == 401 || whatTheError == 402) {
+            System.out.println(WhatTheError.CLIENTERROR);
+        }
     }
 
 

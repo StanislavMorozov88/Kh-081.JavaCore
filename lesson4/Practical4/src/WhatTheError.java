@@ -4,11 +4,7 @@ public enum WhatTheError {
     REDIRECTION(300,301,302),
     CLIENTERROR(400,401,402);
 
-    WhatTheError(int i, int i1, int i2, int i3) {
+    WhatTheError(int i, int i1, int i2, int i3) {}
 
-    }
-
-    WhatTheError(int i, int i1, int i2) {
-
-    }
+    WhatTheError(int i, int i1, int i2) {}
 }
