@@ -14,11 +14,6 @@ public class PrTask2 {
         Employee e5 = new Employee("Marry", 127, 6850);
         Scanner scan = new Scanner(System.in);
 
-//        System.out.println(e1);
-//        System.out.println(e2);
-//        System.out.println(e3);
-//        System.out.println(e4);
-//        System.out.println(e5);
         Employee[] employees = new Employee[5];
         employees[0] = e1;
         employees[1] = e2;
@@ -33,10 +28,10 @@ public class PrTask2 {
         for (int i = 0; i < employees.length ; i++) {
             if(employees[i].getDepartmentNumber() == sc){
                 System.out.println(employees[i]);
-            }else{
-                System.out.println("There are not employees in this department");
-                break;
             }
+        }
+        if(employees[0].getDepartmentNumber() != sc && employees[1].getDepartmentNumber() != sc && employees[2].getDepartmentNumber() != sc && employees[3].getDepartmentNumber() != sc && employees[4].getDepartmentNumber() != sc){
+            System.out.println("There is no employee in this department");
         }
         for (int i = 0; i < employeesSalary.length -1 ; i++) {
             for (int j = i+1 ; j < employeesSalary.length ; j++) {
@@ -48,17 +43,6 @@ public class PrTask2 {
             }
         }
         System.out.println("Employees salary in descending order: " + Arrays.toString(employeesSalary));
-
-
-
-
-
-
-
-
+        scan.close();
     }
-
-
-
-
 }
