@@ -1,4 +1,4 @@
-package Homework._4.Task3;
+package PracticalTask._4.Task3;
 
 public enum Continents {
     Asia("Азія"),
