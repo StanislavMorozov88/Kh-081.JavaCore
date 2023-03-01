@@ -59,11 +59,14 @@ public class Car {
                 new Car("cabriolet", 1985, 250),
                 new Car("sportcar", 1990, 270)};
 
-        System.out.println(Arrays.toString(getCertainYearModel(cars)));
         System.out.println(Arrays.toString(cars));
         sortCarsByYearAsc(cars);
         System.out.println(Arrays.toString(cars));
 
+        Car[] carsByCertainYear = getCertainYearModel(cars);
+        if (carsByCertainYear.length == 0) {
+            System.out.println("No models with this year of manufacture");
+        } else System.out.println(Arrays.toString(carsByCertainYear));
 
     }
 
