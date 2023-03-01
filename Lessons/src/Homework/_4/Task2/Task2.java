@@ -9,7 +9,7 @@ public class Task2 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введіть номер дня:");
         int n = sc.nextInt();
-
+        sc.close();
         switch (n){
             case 1 -> {
                 day = DaysOfWeek.MONDAY;
