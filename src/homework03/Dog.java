@@ -13,6 +13,11 @@ public class Dog {
         this.age = age;
     }
 
+    public Dog(String name, String breed) {
+        this.name = name;
+        this.breed = breed;
+    }
+
     @Override
     public String toString() {
         return "Dog{" +
