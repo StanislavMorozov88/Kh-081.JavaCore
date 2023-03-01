@@ -1,7 +1,5 @@
 package Homework._4.Task1;
 
-import java.util.Arrays;
-import java.util.Optional;
 
 public enum HTTPError{
     BadRequest(400, "Bad request"),

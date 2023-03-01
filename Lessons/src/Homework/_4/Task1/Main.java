@@ -42,7 +42,7 @@ public class Main {
                 System.out.println("Try again!");
             }
         }
-
+        sc.close();
 //        //діч через Optional, працює прікольно, але ще рано
 //        int err = 404;
 //        Optional<HTTPErrorByOptional> error = HTTPErrorByOptional.get(err);
