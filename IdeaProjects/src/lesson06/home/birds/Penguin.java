@@ -1,6 +1,6 @@
 package lesson06.home.birds;
 
-public class Penguin extends NonFlyingBirds{
+public class Penguin extends NonFlyingBirds {
 
     public Penguin(String feathers, int layEggs, double maxWalkingSpeed) {
         super(feathers, layEggs, maxWalkingSpeed);
@@ -8,9 +8,9 @@ public class Penguin extends NonFlyingBirds{
 
     @Override
     public void walk() {
-        if (currentWalkingSpeed<getMaxWalkingSpeed()){
-            currentWalkingSpeed+=(getMaxWalkingSpeed()*0.34);
-            if (currentWalkingSpeed>getMaxWalkingSpeed()){
+        if (currentWalkingSpeed < getMaxWalkingSpeed()) {
+            currentWalkingSpeed += (getMaxWalkingSpeed() * 0.34);
+            if (currentWalkingSpeed > getMaxWalkingSpeed()) {
                 currentWalkingSpeed = getMaxWalkingSpeed();
             }
         }
@@ -24,7 +24,7 @@ public class Penguin extends NonFlyingBirds{
 
     @Override
     public void fly() {
-        System.out.print("Penguin ");
+        System.out.print("I am Penguin ");
         super.fly();
     }
 
@@ -34,4 +34,8 @@ public class Penguin extends NonFlyingBirds{
         super.printWalkingStatus();
     }
 
+    @Override
+    public String toString() {
+        return "Penguin{} " + super.toString();
+    }
 }
