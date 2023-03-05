@@ -51,4 +51,11 @@ public class Employee {
                 '}';
     }
 
+    //add method report() for ex from lesson5
+    public String report() {
+        //return super.report();
+        return String.format("Name: %s, DepartNum: %d, Salary: \u20B4 %,2f.",
+                getName(), getDepartNum(), getSalary());
+    }
+
 }

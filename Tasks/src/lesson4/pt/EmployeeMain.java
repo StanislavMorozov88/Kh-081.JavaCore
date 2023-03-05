@@ -38,28 +38,6 @@ public class EmployeeMain {
         System.out.println("All employees of the " + department + " department: ");
         staff(employees, department);
 
-//        for (int i = 0; i < employees.length; i++) {
-//            if (department == employees[i].getDepartNum()) {
-//                //System.out.println(employees[i].toString());
-//                System.out.println(employees[i].getName());
-//            }
-//        }
-//
-//
-//        //arrange workers by the field salary in descending order.
-//        Employee temp;
-//        for (int i = 0; i < employees.length - 1; i++) {
-//            for (int j = i + 1; j < employees.length; j++) {
-//                if (employees[i].getSalary() < employees[j].getSalary()) {
-//                    temp = employees[i];
-//                    employees[i] = employees[j];
-//                    employees[j] = temp;
-//                }
-//            }
-//        }
-//        for (int i = 0; i < employees.length; i++) {
-//            System.out.println(employees[i].toString());
-//        }
 
     }
 
