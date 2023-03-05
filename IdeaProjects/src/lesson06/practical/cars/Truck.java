@@ -15,12 +15,7 @@ public class Truck extends Car {
             }
         }
         printMoveStatus();
-    }
-
-    @Override
-    public void stop() {
-        super.stop();
-    }
+    }    
 
     @Override
     public void printMoveStatus() {
