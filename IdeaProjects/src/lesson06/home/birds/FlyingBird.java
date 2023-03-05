@@ -1,32 +1,29 @@
 package lesson06.home.birds;
 
-public abstract class FlyingBird extends Bird {
+public class FlyingBird extends Bird {
     private double maxFlightAltitude;
-    protected double currentFlightAltitude;
 
-    protected FlyingBird(String feathers, int layEggs, double maxFlightAltitude) {
-        super(feathers, layEggs);
-        this.maxFlightAltitude = maxFlightAltitude;
-        this.currentFlightAltitude = 0;
+    {
+        maxFlightAltitude = 0;
     }
 
-    public void lend() {
-        currentFlightAltitude = 0;
+    protected FlyingBird(String feathers, int layEggs) {
+        super(feathers, layEggs);
+    }
+
+    @Override
+    public void fly() {
         printFlightStatus();
     }
 
-    public void printFlightStatus() {
-        if (currentFlightAltitude > 0) {
-            if (currentFlightAltitude == maxFlightAltitude) {
-                System.out.printf("I am flying at maximum altitude %,.2f meters.%n", maxFlightAltitude);
-            } else {
-                System.out.printf("I am flying at %,.2f meters. I can fly faster.%n", currentFlightAltitude);
-            }
-        } else System.out.println("I have landed");
+    protected void printFlightStatus() {
+        if (maxFlightAltitude > 0) {
+            System.out.printf("I can fly at an altitude of %,.2f meters.%n", maxFlightAltitude);
+        } else System.out.println("I am FlyingBird. I can fly");
     }
 
-    public double getCurrentFlightAltitude() {
-        return currentFlightAltitude;
+    public void setMaxFlightAltitude(double maxFlightAltitude) {
+        this.maxFlightAltitude = maxFlightAltitude;
     }
 
     public double getMaxFlightAltitude() {
@@ -37,7 +34,6 @@ public abstract class FlyingBird extends Bird {
     public String toString() {
         return "FlyingBird{" +
                 "maxFlightAltitude=" + maxFlightAltitude +
-                ", currentFlightAltitude=" + currentFlightAltitude +
                 "} " + super.toString();
     }
 }

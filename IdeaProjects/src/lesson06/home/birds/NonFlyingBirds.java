@@ -1,50 +1,43 @@
 package lesson06.home.birds;
 
-public abstract class NonFlyingBirds extends Bird {
+public class NonFlyingBirds extends Bird {
     private double maxWalkingSpeed;
-    protected double currentWalkingSpeed;
 
-    protected NonFlyingBirds(String feathers, int layEggs, double maxWalkingSpeed) {
+    {
+        maxWalkingSpeed = 0;
+    }
+
+    protected NonFlyingBirds(String feathers, int layEggs) {
         super(feathers, layEggs);
-        this.maxWalkingSpeed = maxWalkingSpeed;
-        currentWalkingSpeed = 0;
-    }
-
-    public abstract void walk();
-
-    public void stop() {
-        currentWalkingSpeed = 0;
-        printWalkingStatus();
-    }
-
-    public void printWalkingStatus() {
-        if (currentWalkingSpeed > 0) {
-            if (currentWalkingSpeed == maxWalkingSpeed) {
-                System.out.printf("is walking at a maximum speed of %,.2f km/h.%n", maxWalkingSpeed);
-            } else {
-                System.out.printf("is walking at a speed of %,.2f km/h.%n", currentWalkingSpeed);
-            }
-        } else System.out.println("is stopped.");
     }
 
     @Override
     public void fly() {
-        System.out.println("I can't fly");
+        System.out.println("I am NonFlying bird. I can't fly");
+    }
+
+    public void walk() {
+        printWalkingStatus();
+    }
+
+    protected void printWalkingStatus() {
+        if (maxWalkingSpeed > 0) {
+            System.out.printf("I can walk at a speed of %,.2f km/h%n", maxWalkingSpeed);
+        } else System.out.println("I am NonFlying bird. I can walk");
     }
 
     public double getMaxWalkingSpeed() {
         return maxWalkingSpeed;
     }
 
-    public double getCurrentWalkingSpeed() {
-        return currentWalkingSpeed;
+    public void setMaxWalkingSpeed(double maxWalkingSpeed) {
+        this.maxWalkingSpeed = maxWalkingSpeed;
     }
 
     @Override
     public String toString() {
         return "NonFlyingBirds{" +
                 "maxWalkingSpeed=" + maxWalkingSpeed +
-                ", currentWalkingSpeed=" + currentWalkingSpeed +
                 "} " + super.toString();
     }
 }

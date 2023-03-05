@@ -10,24 +10,16 @@ public class BirdsMain {
         NonFlyingBirds penguin2 = new Penguin("black", 10, 10);
         Bird chicken1 = new Chicken("white", 8, 8);
         NonFlyingBirds chicken2 = new Chicken("white", 12, 7);
+        Bird flyingBird = new FlyingBird("some feathers",12);
+        Bird nonFlyingBird = new NonFlyingBirds("bright",10);
 
-        ((FlyingBird) eagle1).lend();
-        eagle2.fly();
-        swallow1.fly();
-        swallow2.fly();
-        swallow2.fly();
-        ((NonFlyingBirds) penguin1).walk();
-        penguin2.stop();
-        ((NonFlyingBirds) chicken1).walk();
-        chicken2.walk();
-        System.out.println();
 
-        Bird[] birds = {eagle1, penguin1, eagle2, swallow2, chicken1, swallow1, chicken2, penguin2};
+        Bird[] birds = {eagle1, penguin1, eagle2, swallow2, chicken1, swallow1, chicken2, penguin2,flyingBird,nonFlyingBird};
 
         for (Bird bird : birds) {
             bird.fly();
             if (bird instanceof NonFlyingBirds) {
-                ((NonFlyingBirds) bird).printWalkingStatus();
+                ((NonFlyingBirds) bird).walk();
             }
         }
         System.out.println();

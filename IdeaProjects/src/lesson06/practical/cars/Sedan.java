@@ -14,14 +14,18 @@ public class Sedan extends Car {
                 currentSpeed = getMaxSpeed();
             }
         }
-        System.out.print("[Sedan] ");
         printMoveStatus();
     }
 
     @Override
     public void stop() {
-        System.out.print("[Sedan] ");
         super.stop();
+    }
+
+    @Override
+    public void printMoveStatus() {
+        System.out.print("[Sedan] ");
+        super.printMoveStatus();
     }
 
     @Override

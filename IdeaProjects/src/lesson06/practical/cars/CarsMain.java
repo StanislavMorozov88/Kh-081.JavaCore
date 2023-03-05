@@ -15,6 +15,7 @@ public class CarsMain {
 
         Car[] cars = {truck1, sedan1, truck2, sedan2};
         for (Car car : cars) {
+            car.printMoveStatus();
             System.out.println(car);
         }
 

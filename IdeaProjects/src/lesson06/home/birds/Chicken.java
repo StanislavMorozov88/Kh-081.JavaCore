@@ -3,23 +3,8 @@ package lesson06.home.birds;
 public class Chicken extends NonFlyingBirds {
 
     public Chicken(String feathers, int layEggs, double maxWalkingSpeed) {
-        super(feathers, layEggs, maxWalkingSpeed);
-    }
-
-    @Override
-    public void walk() {
-        if (currentWalkingSpeed < getMaxWalkingSpeed()) {
-            currentWalkingSpeed += (getMaxWalkingSpeed() * 0.5);
-            if (currentWalkingSpeed > getMaxWalkingSpeed()) {
-                currentWalkingSpeed = getMaxWalkingSpeed();
-            }
-        }
-        printWalkingStatus();
-    }
-
-    @Override
-    public void stop() {
-        super.stop();
+        super(feathers, layEggs);
+        setMaxWalkingSpeed(maxWalkingSpeed);
     }
 
     @Override
@@ -30,7 +15,7 @@ public class Chicken extends NonFlyingBirds {
 
     @Override
     public void printWalkingStatus() {
-        System.out.print("Chicken ");
+        System.out.print("I am Chicken ");
         super.printWalkingStatus();
     }
 

@@ -14,15 +14,18 @@ public class Truck extends Car {
                 currentSpeed = getMaxSpeed();
             }
         }
-        System.out.print("[Truck] ");
         printMoveStatus();
-
     }
 
     @Override
     public void stop() {
-        System.out.print("[Truck] ");
         super.stop();
+    }
+
+    @Override
+    public void printMoveStatus() {
+        System.out.print("[Truck] ");
+        super.printMoveStatus();
     }
 
     @Override

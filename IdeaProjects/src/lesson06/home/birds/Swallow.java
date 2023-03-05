@@ -2,20 +2,15 @@ package lesson06.home.birds;
 
 public class Swallow extends FlyingBird {
 
-    public Swallow(String feathers, int layEggs, double maxFlightAltitude) {
-        super(feathers, layEggs, maxFlightAltitude);
+    public Swallow(String feathers, int layEggs,double maxFlightAltitude) {
+        super(feathers, layEggs);
+        setMaxFlightAltitude(maxFlightAltitude);
     }
 
     @Override
-    public void fly() {
-        if (currentFlightAltitude < getMaxFlightAltitude()) {
-            currentFlightAltitude += (getMaxFlightAltitude() * 0.25);
-            if (currentFlightAltitude > getMaxFlightAltitude()) {
-                currentFlightAltitude = getMaxFlightAltitude();
-            }
-        }
+    protected void printFlightStatus() {
         System.out.print("I am Swallow. ");
-        printFlightStatus();
+        super.printFlightStatus();
     }
 
     @Override
