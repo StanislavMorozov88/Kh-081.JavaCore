@@ -68,6 +68,7 @@ public class Employee {
                 }
             }
         }
+        System.out.println("Employee arranged by salary: ");
         for (Employee j : arr) {
             System.out.println(j.name + ": " + j.salary);
         }
