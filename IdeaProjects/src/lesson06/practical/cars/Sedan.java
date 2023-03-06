@@ -17,11 +17,6 @@ public class Sedan extends Car {
         printMoveStatus();
     }
     @Override
-    public void stop() {
-        super.stop();
-    }
-
-    @Override
     public void printMoveStatus() {
         System.out.print("[Sedan] ");
         super.printMoveStatus();
