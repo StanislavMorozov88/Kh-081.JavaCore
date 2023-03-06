@@ -11,6 +11,7 @@ public class CarsMain {
         truck2.run();
         sedan1.run();
         sedan1.run();
+        sedan2.stop();
         System.out.println();
 
         Car[] cars = {truck1, sedan1, truck2, sedan2};

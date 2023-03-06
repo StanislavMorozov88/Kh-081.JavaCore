@@ -18,11 +18,6 @@ public class Truck extends Car {
     }
 
     @Override
-    public void stop() {
-        super.stop();
-    }
-
-    @Override
     public void printMoveStatus() {
         System.out.print("[Truck] ");
         super.printMoveStatus();
