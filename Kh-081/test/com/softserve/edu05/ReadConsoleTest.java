@@ -9,7 +9,12 @@ import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+/**У тестах використовуємо ByteArrayInputStream, щоб передати рядок "......" у System.setIn.
+ * Потім викликаємо readIntFromConsole і очікуємо, що він верне вміст але відповідного типу.
+ * Додатнє число в першому, від'ємне в другому, дабл в третьому тесті і т.д.
+ * Метод assertEquals перевіряє, що фактичний результат сповпадає з очікуваним.
+ * Якщо користувач вводить що-небудь інше окрім цілого, то метод scanner.nextInt() викликає виключення InputMismatchException.
+*/
 class ReadConsoleTest {
 
     @Test
