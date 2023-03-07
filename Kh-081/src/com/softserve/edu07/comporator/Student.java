@@ -1,12 +1,16 @@
-package com.softserve.edu07;
+package com.softserve.edu07.comporator;
 
-public class Student implements Comparable<Student> {
+import java.util.Comparator;
+
+public class Student implements Comparator<Student> {
+
     private String name;
     private int age;
 
-    public Student() {
+    public Student(){
         name = "";
         age = 0;
+
     }
 
     public Student(String name, int age) {
@@ -30,11 +34,16 @@ public class Student implements Comparable<Student> {
         this.age = age;
     }
 
+    //ByAge
+//    @Override
+//    public int compare(Student o1, Student o2) {
+//        return o1.getAge()-o2.getAge();
+//    }
+    //ByNameAndAge
     @Override
-    public int compareTo(Student student) { // Default Sort
-        //return name.compareTo(((Student) student).getName());
-       // return -age + student.getAge();
-         return age - student.getAge();
+    public int compare(Student o1, Student o2) {
+        int byName = o1.getName().compareTo(o2.getName());
+        return byName == 0 ? o2.getAge()- o1.getAge() : byName;
     }
 
     @Override
@@ -62,8 +71,4 @@ public class Student implements Comparable<Student> {
                 ", age=" + age +
                 '}';
     }
-
-
-
-
 }

@@ -11,6 +11,8 @@ public class TestInterface {
                 new Circle(5.8, "MyCircle"),
                 new Cube(6.7, "MyCube"),
                 new Ball(6.3, "MyBall")};
+
+        //зверніть увагу для кого вивело площу і об'єм
         for(Shape shape:shapes){
             double area = shape.getArea();
             System.out.println("Shape area for " + shape.getClass().getSimpleName() + " " + area);

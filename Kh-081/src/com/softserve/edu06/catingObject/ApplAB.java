@@ -6,7 +6,7 @@ public class ApplAB {
 		System.out.println("The Start.");
 
 		ClassA a = new ClassA();
-		System.out.println("Test ClassA.");
+		System.out.println("SortingArray ClassA.");
 		a.m1();
 		a.m2();
 		a.m3();
@@ -14,7 +14,7 @@ public class ApplAB {
 		System.out.println();
 
 		ClassB b = new ClassB();
-		System.out.println("Test ClassB.");
+		System.out.println("SortingArray ClassB.");
 		b.m1();
 		b.m2();
 		b.m3();

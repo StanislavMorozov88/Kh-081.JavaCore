@@ -2,7 +2,7 @@ package com.softserve.edu07;
 
 import java.util.*;
 
-public class Test {
+public class SortingArray {
     public static void main(String[] args) {
         int[] x = new int[10];
         Random rand = new Random();

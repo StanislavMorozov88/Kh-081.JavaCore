@@ -1,9 +1,9 @@
-package com.softserve.edu07;
+package com.softserve.edu07.comparable;
 
 
 import java.util.Arrays;
 
-public class Test2 {
+public class SortingStudent {
     public static void main(String[ ] args) {
         Student[] students = new Student[3];
 
@@ -15,5 +15,4 @@ public class Test2 {
         System.out.println(Arrays.toString(students));
 
     }
-
 }

@@ -5,6 +5,10 @@ public class Computer {
     private final Ram ram;
     private final Ssd ssd;
 
+    public static class Company{
+        private Company company;
+    }
+
     public Computer(Ram ram, Ssd ssd) {
         this.ram = ram;
         this.ssd = ssd;
