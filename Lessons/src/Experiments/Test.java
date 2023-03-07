@@ -19,5 +19,6 @@ public class Test {
         menu.delete(2);
         menu.addLine(Integer.toString(menu.getNumberOfLines()));
         menu.show();
+
     }
 }

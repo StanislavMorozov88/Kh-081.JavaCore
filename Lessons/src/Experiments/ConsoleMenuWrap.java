@@ -44,20 +44,43 @@ public class ConsoleMenuWrap {
     //Виводим нашу сторіночку;
     public void show(){
         step++;
-        System.out.println("▣ Step: "+step);
+        resize();
+        //System.out.println("▣ Step: "+step);
         for (String line : this.window) {
             System.out.println(line);
         }
-        System.out.println(" ");
+        System.out.println(this.window[0]);
     }
 
-    //одаєм новий рядок
+    //додаєм новий рядок
     public void addLine(String line){
         this.window  = Arrays.copyOf(this.window, this.window.length+1);
         this.window[this.window.length-1] = line;
         if(consoleWidth<this.window.length){
             consoleWidth = this.window.length;
         }
+    }
+
+    //Перевизначаєм ширину
+    public void resize(){
+        int temp = window[0].length();
+
+        for(String line: window){
+            if(line.length() > temp){
+                temp = line.length();
+            }
+        }
+        consoleWidth = temp;
+        StringBuilder topBuilder = new StringBuilder();
+        for (int i=0; i<consoleWidth; i++){
+            if(i==0 || i==consoleWidth-1){
+                topBuilder.append("▣");
+            }else{
+                topBuilder.append("=");
+            }
+        }
+        window[0] = topBuilder.toString();
+
     }
 
     //Витираєм все зайве
@@ -104,6 +127,8 @@ public class ConsoleMenuWrap {
         return consoleWidth;
     }
 
+
+
     public void setConsoleWidth(int consoleWidth){
         this.consoleWidth = consoleWidth;
         StringBuilder topBuilder = new StringBuilder();
@@ -125,3 +150,5 @@ public class ConsoleMenuWrap {
         return window.length -1;
     }
 }
+
+
