@@ -2,25 +2,33 @@ package pract04;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainEmployee {
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        Employee e1 = new Employee("Nick", 1, 12500);
-        Employee e2 = new Employee("Paul", 2, 15.500F);
-        Employee e3 = new Employee("Mary", 2, 14.300F);
-        Employee e4 = new Employee("Mark", 3, 25.200F);
-        Employee e5 = new Employee("Helga", 2, 10.750F);
+        Employee[] employees = new Employee[5];
+        employees[0] = new Employee("Nick", 1, 12500);
+        employees[1] = new Employee("Paul", 2, 15.500F);
+        employees[2] = new Employee("Mary", 2, 14.300F);
+        employees[3] = new Employee("Mark", 3, 25.200F);
+        employees[4] = new Employee("Helga", 2, 10.750F);
 
         System.out.println("Enter the number of department ");
         int number = Integer.parseInt(br.readLine());
-
-        if (number == e1.getDepartmentNumber()) {
-            System.out.println(e1);
+        boolean isAnyEmployeeExistsForEnteredDepartmentNumber = false;
+        for (Employee employee : employees) {
+            if (number == employee.getDepartmentNumber()) {
+                System.out.println(employee);
+                isAnyEmployeeExistsForEnteredDepartmentNumber = true;
+            }
         }
-        System.out.println("There is no employees, working in the department " + number);
-
+        if (!isAnyEmployeeExistsForEnteredDepartmentNumber) {
+            System.out.println("There is no employees, working in the department " + number);
+        }
     }
 }
