@@ -1,4 +1,4 @@
-package lesson07.home;
+package lesson07.home.employee;
 
 import java.util.Arrays;
 
@@ -15,6 +15,7 @@ public class EmployeeMain {
         System.out.println(Arrays.toString(employees));
         Arrays.sort(employees);
         System.out.println(Arrays.toString(employees));
+        System.out.println(salariedEmployee2.salary);
 
     }
 }

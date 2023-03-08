@@ -1,6 +1,4 @@
-package lesson07.home;
-
-import java.util.Objects;
+package lesson07.home.employee;
 
 public class Employee implements Comparable<Employee> {
     private String name;
