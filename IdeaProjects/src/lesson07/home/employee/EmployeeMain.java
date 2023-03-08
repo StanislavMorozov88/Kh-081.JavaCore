@@ -18,11 +18,5 @@ public class EmployeeMain {
         employeeService.printEmployees();//before sorting
         employeeService.sortEmployeesSalaryDesc(); //sorting
         employeeService.printEmployees(); //after sorting
-
-
-
-
-
-
     }
 }
