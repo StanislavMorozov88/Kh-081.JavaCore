@@ -41,6 +41,6 @@ public class Employee implements Comparable<Employee> {
         return "Employee[" +
                 "employeeId='" + employeeId +
                 "', name='" + name +
-                "', salary=" + getSalary() + "]";
+                "', salary=" + salary + "]";
     }
 }

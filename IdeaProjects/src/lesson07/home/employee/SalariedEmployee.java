@@ -14,14 +14,9 @@ public class SalariedEmployee extends Employee implements Payment {
         hoursWorked = 40; //по замовчуванню 40, але є сетер.
     }
 
-    @Override
-    public double getSalary() {
-        salary = calculatePay();
-        return salary;
-    }
-
     public double calculatePay() {
-        return hourlyRate * hoursWorked;
+        salary = hourlyRate * hoursWorked;
+        return getSalary();
     }
 
     public String getSocialSecurityNumber() {

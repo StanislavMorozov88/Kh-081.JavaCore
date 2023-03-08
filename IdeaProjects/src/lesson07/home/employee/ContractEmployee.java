@@ -12,14 +12,9 @@ public class ContractEmployee extends Employee implements Payment {
         this.fixedMonthlyPayment = fixedMonthlyPayment;
     }
 
-    @Override
-    public double getSalary() {
-        salary = calculatePay();
-        return salary;
-    }
-
     public double calculatePay() {
-        return fixedMonthlyPayment;
+        salary = fixedMonthlyPayment;
+        return getSalary();
     }
 
     public String getFederalTaxIdMember() {
