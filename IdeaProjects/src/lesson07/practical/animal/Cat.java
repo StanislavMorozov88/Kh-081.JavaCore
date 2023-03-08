@@ -16,7 +16,7 @@ public class Cat implements Animal {
 
     @Override
     public void feed() {
-        System.out.println("Cat " + name + " gaines 0.05 kg after every meal");
+        System.out.println(this.getClass().getSimpleName() + " " + name + " gaines 0.05 kg after every meal");
         weight += 0.05;
     }
 

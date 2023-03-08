@@ -2,6 +2,9 @@ package lesson07.practical.animal;
 
 import lesson06.practical.lines.Point;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AnimalMain {
     public static void main(String[] args) {
         AnimalService animalService = new AnimalService();

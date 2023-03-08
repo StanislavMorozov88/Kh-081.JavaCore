@@ -48,7 +48,7 @@ public class AnimalService {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Animals: ");
-        for (int i = 0; i <= animals.length; i++) {
+        for (int i = 0; i <= index; i++) {
             sb.append(animals[i] + ", ");
         }
         return sb.toString();
