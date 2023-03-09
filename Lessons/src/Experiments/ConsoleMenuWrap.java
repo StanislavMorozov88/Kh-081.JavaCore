@@ -45,11 +45,11 @@ public class ConsoleMenuWrap {
     public void show(){
         step++;
         resize();
-        //System.out.println("▣ Step: "+step);
+        System.out.println("\n▣ Step: "+step);
         for (String line : this.window) {
             System.out.println(line);
         }
-        System.out.println(this.window[0]);
+        //System.out.println(this.window[0]);
     }
 
     //додаєм новий рядок

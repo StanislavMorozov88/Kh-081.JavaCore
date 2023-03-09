@@ -30,9 +30,11 @@ public class Employee {
         StringBuilder builder = new StringBuilder();
         for(Employee e: employers){
             if (e.departmentNumber == departmentNumber) {
-                builder.append(e.name + "\n");
+                builder.append(e.name + ", ");
             }
         }
+        builder.delete(builder.length()-2, builder.length());
+        builder.append(".");
         return builder.toString();
     }
 
@@ -52,11 +54,10 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
-                ", departmentNumber=" + departmentNumber +
-                ", salary=" + salary +
-                '}';
+        return  name +
+                ", in department №" + departmentNumber +
+                ", has salary " + salary +
+                '$';
     }
 
     @Override
