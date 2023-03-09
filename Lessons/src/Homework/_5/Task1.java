@@ -9,7 +9,7 @@ public class Task1 {
 
     public static String getEnd(int i) throws Exception{
         if (i<1){
-            throw new Exception("number must be positive bigger than 0");
+            throw new Exception("number must be bigger than 0");
         }
         switch (i){
             case 1 ->{
