@@ -2,8 +2,6 @@ package PracticalTask._5.Task2;
 
 import Experiments.ConsoleMenuWrap;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
-
 import static java.util.concurrent.TimeUnit.*;
 
 public class Main {
