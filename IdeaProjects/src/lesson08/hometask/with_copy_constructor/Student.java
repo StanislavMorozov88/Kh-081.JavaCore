@@ -1,4 +1,4 @@
-package lesson08.hometask;
+package lesson08.hometask.with_copy_constructor;
 
 public class Student extends Person {
     private int course;
@@ -8,12 +8,16 @@ public class Student extends Person {
         this.course = course;
     }
 
+    public Student(Student another) {
+        super(another);
+        this.course = another.course;
+    }
+
     @Override
     public void info() {
         super.info();
         System.out.printf(", Course: %d%n", course);
-        System.out.println(activity());
-        System.out.println();
+        System.out.println(activity() + "\n");
     }
 
     @Override

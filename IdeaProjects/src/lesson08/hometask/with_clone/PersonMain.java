@@ -1,4 +1,4 @@
-package lesson08.hometask;
+package lesson08.hometask.with_clone;
 
 public class PersonMain {
     public static void main(String[] args) throws CloneNotSupportedException {
