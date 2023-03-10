@@ -10,6 +10,7 @@ public class MainBird {
         birds[3] = new Kiwi();
 
         for (Bird bird : birds) {
+            System.out.println(bird.getClass().getSimpleName());
             System.out.println(bird.fly());
         }
     }

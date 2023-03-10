@@ -1,9 +1,9 @@
 package homework05;
 
 public abstract class Bird {
+    public abstract String fly();
     private String feathers;
     private boolean layEggs;
-    public abstract boolean fly();
     public Bird() {
     }
 

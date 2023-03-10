@@ -2,8 +2,9 @@ package homework05;
 
 public class NonFlyingBird extends Bird {
     @Override
-    public boolean fly() {
-        return false;
+    public String fly() {
+        System.out.println(" can't fly");
+        return "";
     }
     protected double size;
 

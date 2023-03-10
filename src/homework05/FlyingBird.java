@@ -3,9 +3,11 @@ package homework05;
 public class FlyingBird extends Bird {
 
     @Override
-    public boolean fly() {
-        return true;
+    public String fly() {
+        System.out.println(" can fly");
+        return "";
     }
+
     protected int maxFlightRange;
     protected int maxFlightSpeed;
 
