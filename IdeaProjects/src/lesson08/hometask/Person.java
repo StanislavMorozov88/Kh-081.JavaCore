@@ -38,10 +38,6 @@ public abstract class Person implements Cloneable {
         }
     }
 
-    public void setFullName(FullName fullName) {
-        this.fullName = fullName;
-    }
-
     public void info() {
         System.out.printf("First name: %s, Last name: %s, Age: %d ", fullName.firstName, fullName.lastName, age);
     }
