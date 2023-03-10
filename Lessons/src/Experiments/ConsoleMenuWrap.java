@@ -51,6 +51,15 @@ public class ConsoleMenuWrap {
         }
         //System.out.println(this.window[0]);
     }
+    public void show(int width){
+        step++;
+        resize(width);
+        System.out.println("\n▣ Step: "+step);
+        for (String line : this.window) {
+            System.out.println(line);
+        }
+        //System.out.println(this.window[0]);
+    }
 
     //додаєм новий рядок
     public void addLine(String line){
@@ -80,7 +89,19 @@ public class ConsoleMenuWrap {
             }
         }
         window[0] = topBuilder.toString();
+    }
 
+    public void resize(int width){
+        consoleWidth = width;
+        StringBuilder topBuilder = new StringBuilder();
+        for (int i=0; i<consoleWidth; i++){
+            if(i==0 || i==consoleWidth-1){
+                topBuilder.append("▣");
+            }else{
+                topBuilder.append("=");
+            }
+        }
+        window[0] = topBuilder.toString();
     }
 
     //Витираєм все зайве
