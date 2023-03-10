@@ -16,6 +16,4 @@ public class DepartmentTest {
         System.out.println("Copy of department: " + copyOfDepartment);
 
     }
-
-
 }
