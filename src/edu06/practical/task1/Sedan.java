@@ -1,6 +1,8 @@
-package edu06.practical;
+package edu06.practical.task1;
 
-public class Sedan extends Car{
+import edu06.practical.task1.Car;
+
+public class Sedan extends Car {
 
     public Sedan(String model, int maxSpeed, int yearOfManufacture) {
         super(model, maxSpeed, yearOfManufacture);

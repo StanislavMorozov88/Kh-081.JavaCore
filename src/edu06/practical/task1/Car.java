@@ -1,4 +1,4 @@
-package edu06.practical;
+package edu06.practical.task1;
 
 public abstract class Car {
     private String model;

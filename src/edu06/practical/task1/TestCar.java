@@ -1,6 +1,4 @@
-package edu06.practical;
-
-import java.util.Arrays;
+package edu06.practical.task1;
 
 public class TestCar {
     public static void main(String[] args) {
@@ -14,11 +12,11 @@ public class TestCar {
         for (Car car: cars) {
             System.out.println(car);
         }
-
+        //check method run
         for(int i = 0; i < cars.length; i++){
             cars[i].run();
         }
-
+        //check method stop
         for (int i = 0; i < cars.length; i++){
             cars[i].stop();
         }
