@@ -7,6 +7,7 @@ public class PersonMain {
         Student copyOfStudent1 = (Student) student1.clone(); //cloning the student1
         copyOfStudent1.setCourse(2);//course change for a cloned student
 
+
         Person[] students = {student1, student2, copyOfStudent1};
         //output info about all students
         for (Person student : students) {
