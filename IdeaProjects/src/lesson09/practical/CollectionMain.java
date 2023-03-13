@@ -6,33 +6,27 @@ import java.util.stream.Collectors;
 public class CollectionMain {
     public static void main(String[] args) {
         //fill list with values
-        List<Integer> myCollection = fillList();
+        List<Integer> list = List.of(1, 5, 2, 22, 88, -5, -8, 0, 9, 33);
+        List<Integer> myCollection = new ArrayList<>(list);
         System.out.println("myCollection list with 10 elements: " + myCollection);
 
-        //new list - is a sublist of myCollection from the 5th position
-        List<Integer> newCollection = myCollection.subList(5, 10);
-        System.out.println("newCollection list is: " + newCollection);
+        //newCollection - is a sublist of myCollection from the 5th position
+        /*List<Integer> newCollection = myCollection.subList(5, 10);
+        System.out.println("newCollection list is: " + newCollection);*/
 
-        //remove all values greater than 20 from myCollection (with stream)
-        //just uncomment
-        /*myCollection = listOfGreaterThanTwenty(myCollection);
-        System.out.println(myCollection);*/
+        //newCollection contains all the elements from myCollection with values greater than 5
+        List<Integer> newCollection = greaterThanFive(myCollection);
+        System.out.println("newCollection list with all values greater than 5: " + newCollection);
 
-        /*remove all values greater than 20 from myCollection using iterator.
-        I changed the original list as it was agreed at the lecture. But I can pass copy of original list and return new list as needed.*/
-        /*listOfGreaterThanTwentyWithIterator(myCollection);
-        System.out.println(myCollection);*/
-
-
-        //or we can just use
+        //remove all values greater than 20 from myCollection
         myCollection.removeIf(i -> i > 20);
         System.out.println("myCollection with all the values less than 20: " + myCollection);
-
 
         //I decided to use map to store index as key and value as values
         Map<Integer, Integer> map = Map.of(2, 1, 8, -3, 5, -4);
         addToDifferentPosition(myCollection, map);
-        System.out.println("myCollection after adding values at indexes 2, 8(unsuccessfully), 5: " + myCollection);
+        System.out.println("myCollection after adding values at indexes 2, 8, 5: " + myCollection);
+
 
         //sort ascending
         myCollection.sort(Integer::compare);
@@ -42,22 +36,12 @@ public class CollectionMain {
         myCollection.sort(Comparator.reverseOrder());
         System.out.println("myCollection sorted in descending order: " + myCollection);
 
-
     }
 
-    public static void listOfGreaterThanTwentyWithIterator(List<Integer> myCollection) {
-        Iterator<Integer> myCollectionIter = myCollection.iterator();
-        while (myCollectionIter.hasNext()) {
-            if (myCollectionIter.next() > 20) {
-                myCollectionIter.remove();
-            }
-        }
-    }
-
-    public static List<Integer> listOfGreaterThanTwenty(List<Integer> myCollection) {
+    public static List<Integer> greaterThanFive(List<Integer> myCollection) {
         return myCollection.stream()
-                .filter(i -> i <= 20)
-                .collect(Collectors.toCollection(ArrayList::new));
+                        .filter(integer -> integer > 5)
+                                .collect(Collectors.toList());
     }
 
     public static void addToDifferentPosition(List<Integer> myCollection, Map<Integer, Integer> map) {
@@ -69,13 +53,5 @@ public class CollectionMain {
                 System.err.println("Can't add value of element " + entry.getValue() + " to the position " + entry.getKey());
             }
         }
-    }
-
-    public static List<Integer> fillList() {
-        List<Integer> integerList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            integerList.add(i * i);
-        }
-        return integerList;
     }
 }
