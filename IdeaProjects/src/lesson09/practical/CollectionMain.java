@@ -64,8 +64,9 @@ public class CollectionMain {
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             try {
                 myCollection.add(entry.getKey(), entry.getValue());
+                System.out.println("position: " + entry.getKey() + ", value of element " + entry.getValue());
             } catch (IndexOutOfBoundsException e) {
-                System.err.println("Size of list to small");
+                System.err.println("Can't add value of element " + entry.getValue() + " to the position " + entry.getKey());
             }
         }
     }
