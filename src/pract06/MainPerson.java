@@ -13,7 +13,10 @@ public class MainPerson {
             System.out.println(person.print());
             System.out.println(person.getClass().getSimpleName());
 
-
+            // тут якось тєжко мені пішло...
+            // треба би наповнити дані для кожного персона
+            // і викликати метод salary()
+            // заплуталась...((
         }
     }
 }

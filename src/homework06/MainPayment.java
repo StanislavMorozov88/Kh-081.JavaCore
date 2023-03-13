@@ -14,7 +14,9 @@ public class MainPayment {
 //        for (Employee employee : employees) {
 //
 //        }
+    //не знаю як викликати метод обрахунку зарплат calculatePay
 
+        //сортування постараюсь зробити пізніше сама)
 
 
     }
