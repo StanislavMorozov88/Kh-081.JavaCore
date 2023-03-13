@@ -13,25 +13,26 @@ public class CollectionMain {
         List<Integer> newCollection = myCollection.subList(5, 10);
         System.out.println("newCollection list is: " + newCollection);
 
-        //remove all values less than 20 from myCollection (with stream)
+        //remove all values greater than 20 from myCollection (with stream)
         //just uncomment
-        /*myCollection = listOfLessThanTwenty(myCollection);
+        /*myCollection = listOfGreaterThanTwenty(myCollection);
         System.out.println(myCollection);*/
 
-        /*remove all values less than 20 from myCollection using iterator.
+        /*remove all values greater than 20 from myCollection using iterator.
         I changed the original list as it was agreed at the lecture. But I can pass copy of original list and return new list as needed.*/
-        /*listOfLessThanTwentyWithIterator(myCollection);
-        System.out.println(myCollection);
-*/
+        /*listOfGreaterThanTwentyWithIterator(myCollection);
+        System.out.println(myCollection);*/
+
+
         //or we can just use
-        myCollection.removeIf(i -> i < 20);
-        System.out.println(myCollection);
+        myCollection.removeIf(i -> i > 20);
+        System.out.println("myCollection with all the values less than 20: " + myCollection);
 
 
         //I decided to use map to store index as key and value as values
         Map<Integer, Integer> map = Map.of(2, 1, 8, -3, 5, -4);
         addToDifferentPosition(myCollection, map);
-        System.out.println(myCollection);
+        System.out.println("myCollection after adding values at indexes 2, 8(unsuccessfully), 5: " + myCollection);
 
         //sort ascending
         myCollection.sort(Integer::compare);
@@ -44,18 +45,18 @@ public class CollectionMain {
 
     }
 
-    public static void listOfLessThanTwentyWithIterator(List<Integer> myCollection) {
+    public static void listOfGreaterThanTwentyWithIterator(List<Integer> myCollection) {
         Iterator<Integer> myCollectionIter = myCollection.iterator();
         while (myCollectionIter.hasNext()) {
-            if (myCollectionIter.next() < 20) {
+            if (myCollectionIter.next() > 20) {
                 myCollectionIter.remove();
             }
         }
     }
 
-    public static List<Integer> listOfLessThanTwenty(List<Integer> myCollection) {
+    public static List<Integer> listOfGreaterThanTwenty(List<Integer> myCollection) {
         return myCollection.stream()
-                .filter(i -> i < 20)
+                .filter(i -> i <= 20)
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
