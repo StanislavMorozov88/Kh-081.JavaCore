@@ -8,10 +8,6 @@ public class Department implements Cloneable {
     protected Department clone() throws CloneNotSupportedException {
         return (Department) super.clone();
     }
-
-    public Department() {
-    }
-
     public Department(String name, Adress adress) {
         this.name = name;
         this.adress = adress;
