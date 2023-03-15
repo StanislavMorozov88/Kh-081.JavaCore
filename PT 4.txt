@@ -1,0 +1,261 @@
+import java.util.Scanner;
+
+//Enter three numbers. Find out how many of them are odd
+public class Main1 {
+    public static void main(String[] args) {
+        int num1;
+        int num2;
+        int num3;
+
+        System.out.println("Hello. Enter three numbers: ");
+
+        Scanner sc = new Scanner(System.in);
+        num1 = sc.nextInt();
+        num2 = sc.nextInt();
+        num3 = sc.nextInt();
+        sc.close();
+
+
+        if ((num1 % 2 == 0) && (num2 % 2 == 0) && (num3 % 2 == 0))
+            System.out.println("you entered 3 odd numbers");
+        else if (((num1 % 2 == 0) && (num2 % 2 == 0)) || ((num2 % 2 == 0) && (num3 % 2 == 0)) || ((num1 % 2 == 0) && (num3 % 2 == 0)))
+            System.out.println("you entered 2 odd numbers");
+        else if ((num1 % 2 == 0) || (num2 % 2 == 0) || (num3 % 2 == 0))
+            System.out.println("you entered 1 odd number");
+        else
+            System.out.println("you didn't enter any odd number");
+    }
+}
+
+
+===================================================================
+
+//Enter the number of the day of the week. Display the name in two languages
+
+import java.util.Scanner;
+
+public class Main2 {
+    public static void main(String[] args) {
+        int day1, day2, day3;
+
+        System.out.println("Hello. Enter three numbers of the day of the week: ");
+        Scanner sc = new Scanner(System.in);
+        day1 = sc.nextInt();
+        day2 = sc.nextInt();
+        day3 = sc.nextInt();
+        sc.close();
+
+     switch (day1) {
+            case 1:
+                System.out.println("Monday, Понеділок");
+                break;
+            case 2:
+                System.out.println("Tuesday, Вівторок");
+                break;
+            case 3:
+                System.out.println("Wednesday, Середа");
+                break;
+            case 4:
+                System.out.println("Thursday, Четвер");
+                break;
+            case 5:
+                System.out.println("Friday, П'ятниця");
+                break;
+            case 6:
+                System.out.println("Saturday, Субота");
+                break;
+            case 7:
+                System.out.println("Sunday, Неділя");
+                break;
+            default:
+                System.out.println("Please, write the valid number");
+                break;
+        }
+        switch (day2) {
+            case 1:
+                System.out.println("Monday, Понеділок");
+                break;
+            case 2:
+                System.out.println("Tuesday, Вівторок");
+                break;
+            case 3:
+                System.out.println("Wednesday, Середа");
+                break;
+            case 4:
+                System.out.println("Thursday, Четвер");
+                break;
+            case 5:
+                System.out.println("Friday, П'ятниця");
+                break;
+            case 6:
+                System.out.println("Saturday, Субота");
+                break;
+            case 7:
+                System.out.println("Sunday, Неділя");
+                break;
+            default:
+                System.out.println("Please, write the valid number");
+                break;
+        }
+        switch (day3) {
+            case 1:
+                System.out.println("Monday, Понеділок");
+                break;
+            case 2:
+                System.out.println("Tuesday, Вівторок");
+                break;
+            case 3:
+                System.out.println("Wednesday, Середа");
+                break;
+            case 4:
+                System.out.println("Thursday, Четвер");
+                break;
+            case 5:
+                System.out.println("Friday, П'ятниця");
+                break;
+            case 6:
+                System.out.println("Saturday, Субота");
+                break;
+            case 7:
+                System.out.println("Sunday, Неділя");
+                break;
+            default:
+                System.out.println("Please, write the valid number");
+                break;
+        }
+    }
+}
+
+=================================================================
+
+//Enter the name of the country. Print the name of the continent
+(Declare enum with names of continents)
+
+import java.util.Scanner;
+
+    public class Main3 {
+
+        public enum Continent {
+            Africa, Australia, Europe;
+        }
+    public static void main(String[] args) {
+
+        System.out.println("Enter name of country : ");
+        Scanner sc = new Scanner(System.in);
+        String country = sc.nextLine();
+        sc.close();
+
+        Continent country1 = Continent.Africa;
+        Continent country2 = Continent.Australia;
+        Continent country3 = Continent.Europe;
+
+         switch (country) {
+            case "Egypt":
+            case "Kongo":
+                System.out.println(country1);
+                break;
+            case "Sydney":
+            case "Melbourne":
+                System.out.println(country2);
+                break;
+            case "France":
+            case "Belgium":
+            case "Italy":
+                System.out.println(country3);
+                break;
+            default:
+                System.out.println("No this country");
+        };
+    }
+}
+
+=========================================================
+
+// Create class Product with fields name, price and quantity
+//• Create four instances of type Product
+//• Display the name and quantity of the most expensive item
+//• Display the name of the items, which has the biggest quantity
+
+public class Main4 {
+    public static void main(String[] args) {
+        // Products[] products = new Products[4];
+        Products prod1 = new Products("Vegetables", 12.5, 400);
+        Products prod2 = new Products("Fruits", 15.9, 367);
+        Products prod3 = new Products("Meat", 23.4, 245);
+        Products prod4 = new Products("Eggs", 13.7, 156);
+
+             if (prod1.getPrice()==prod2.getPrice()){
+                return  ;
+             }
+                 if (prod2.getPrice()==prod3.getPrice()){
+
+                 }
+                 if(prod3.getPrice()==prod4.getPrice()){
+
+                 }
+          System.out.println(prod1.getPrice()==prod1.getPrice());
+          System.out.println(prod1.equals(prod1));
+        }
+    }
+
+--------------
+
+public class Products {
+    private String name;
+    private double price;
+    private int quantity;
+
+    public Products(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    public Products(String name, double price, int quantity) {
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    @Override
+    public String toString() {
+        return "Products{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                '}';
+    }
+
+    //public Products getMostExpensiveProd( ){
+     //   return
+   // }
+
+
+}
+
+
+
+

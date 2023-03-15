@@ -1,0 +1,104 @@
+import java.util.Scanner;
+
+public class Hw1 {
+    //(Declare enum HTTPError)
+    public enum HTTPError {
+        BadRequest, Unauthorized, PaymentRequired, Forbidden,
+        NotFound, MethodNotAllowed
+    }
+
+    public static void main(String[] args) {
+
+        //Solve the next tasks:
+        //• read 3 float numbers and check: are they all belong to the range [-5, 5]
+        float n1;
+        float n2;
+        float n3;
+        System.out.println("Enter 3 float number: ");
+        Scanner sc1 = new Scanner(System.in);
+        //float doesn`t work, use int...
+        n1 = sc1.nextFloat();
+        n2 = sc1.nextFloat();
+        n3 = sc1.nextFloat();
+
+
+        if (n1 >= -5.0 && n1 <= 5.0) {
+            System.out.println("Belong to the range: " + n1);
+        } else {
+            System.out.println("Not belong to the range: " + n1);
+        }
+        if (n2 >= -5.0 && n2 <= 5.0) {
+            System.out.println("Belong to the range: " + n2);
+        } else {
+            System.out.println("Not belong to the range: " + n2);
+        }
+        if (n3 >= -5.0 && n3 <= 5.0) {
+            System.out.println("Belong to the range: " + n3);
+        } else {
+            System.out.println("Not belong to the range: " + n3);
+        }
+
+        //read 3 integer numbers and write max and min of them;
+        System.out.println("\n" +"Enter 3 int number: ");
+        int n4 = sc1.nextInt();
+        int n5 = sc1.nextInt();
+        int n6 = sc1.nextInt();
+
+
+        if (n4 > n5 && n4 > n6) {
+            System.out.println("Max number: " + n4);
+        } else if (n5 > n4 && n5 > n6) {
+            System.out.println("Max number: " + n5);
+        } else if (n6 > n4 && n6 > n5) {
+            System.out.println("Max number: " + n6);
+        }
+
+        if (n4 < n5 && n4 < n6) {
+            System.out.println("Min number: " + n4);
+        } else if (n5 < n4 && n5 < n6) {
+            System.out.println("Min number: " + n5);
+        }
+        if (n6 < n4 && n6 < n5) {
+            System.out.println("Min number: " + n6);
+        }
+
+        //read number of HTTP Error (400, 401,402, ...) and write the name of this error
+
+        System.out.println("\n" + "Enter code-number of error (400 - 405): ");
+       
+        int e1 = sc1.nextInt();
+        sc1.close();
+
+        HTTPError error1 = HTTPError.BadRequest;
+        HTTPError error2 = HTTPError.Unauthorized;
+        HTTPError error3 = HTTPError.PaymentRequired;
+        HTTPError error4 = HTTPError.Forbidden;
+        HTTPError error5 = HTTPError.NotFound;
+        HTTPError error6 = HTTPError.MethodNotAllowed;
+
+         switch (e1) {
+             case 400:
+                 System.out.println(error1);
+                break;
+            case 401:
+                System.out.println(error2);
+                break;
+            case 402:
+                System.out.println(error3);
+                break;
+            case 403:
+                System.out.println(error4);
+               break;
+            case 404:
+                System.out.println(error5);
+              break;
+            case 405:
+                System.out.println(error6);
+                break;
+            default:
+                System.out.println("No such error ");
+
+        }
+
+    }
+}
