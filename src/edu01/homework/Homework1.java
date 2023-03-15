@@ -15,5 +15,6 @@ public class Homework1 {
         double area = radius * radius * pi;
         System.out.println(perimetr);
         System.out.println(area);
+
     }
 }
