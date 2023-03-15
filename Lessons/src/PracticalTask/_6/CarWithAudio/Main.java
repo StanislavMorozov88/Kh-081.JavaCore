@@ -1,4 +1,4 @@
-package PracticalTask._6.CarWithAudio.audio;
+package PracticalTask._6.CarWithAudio;
 
 public class Main {
 
