@@ -1,47 +1,72 @@
 package pract07;
 
-public class Department {
-//        private Address Address = new Address();
-//        private String name;
-//
-//        public Department(String city, String street, int building, String name) {
-//            Address.city = city;
-//            Address.street = street;
-//            Address.building = building;
-//            this.name = name;
-//        }
-//
-//        @Override
-//        public String toString() {
-//            return "Department{" +
-//                    "Address=" + Address +
-//                    ", name='" + name + '\'' +
-//                    '}';
-//        }
-//
-//        private class Address{
-//            private String city;
-//            private String street;
-//            private int building;
-//
-//            @Override
-//            public String toString() {
-//                return "Address{" +
-//                        "city='" + city + '\'' +
-//                        ", street='" + street + '\'' +
-//                        ", building=" + building +
-//                        '}';
-//            }
-//            public Address(String city, String street, int building) {
-//                this.city = city;
-//                this.street = street;
-//                this.building = building;
-//
-//            }
-//
-//            public void info() {
-//                System.out.println((city + " ," + street + " ," + building));
-//            }
-//        }
+public class Department implements Cloneable {
+    private Address address = new Address();
+    private String name;
+    public Department(String city, String street, int building, String name) {
+        address.city = city;
+        address.street = street;
+        address.building = building;
+        this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "Department{" +
+                "address=" + address +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        Department copyOfDepartment = (Department) super.clone();
+        return copyOfDepartment;
+    }
+
+    public void setCity(String city) {
+        address.city = city;
+    }
+
+    private class Address {
+        private String city;
+        private String street;
+        private int building;
+
+        public String getCity() {
+            return city;
+        }
+
+        public void setCity(String city) {
+            this.city = city;
+        }
+
+        public String getStreet() {
+            return street;
+        }
+
+        public void setStreet(String street) {
+            this.street = street;
+        }
+
+        public int getBuilding() {
+            return building;
+        }
+
+        public void setBuilding(int building) {
+            this.building = building;
+        }
+
+        @Override
+        public String toString() {
+            return "Address{" +
+                    "city='" + city + '\'' +
+                    ", street='" + street + '\'' +
+                    ", building=" + building +
+                    '}';
+
+        }
+    }
+}
 
