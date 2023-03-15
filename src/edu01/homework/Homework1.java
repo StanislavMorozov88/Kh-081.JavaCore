@@ -16,5 +16,6 @@ public class Homework1 {
         System.out.println(perimetr);
         System.out.println(area);
 
+
     }
 }
