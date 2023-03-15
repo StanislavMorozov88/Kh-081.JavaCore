@@ -40,8 +40,8 @@ public class CollectionMain {
 
     public static List<Integer> greaterThanFive(List<Integer> myCollection) {
         return myCollection.stream()
-                        .filter(integer -> integer > 5)
-                                .collect(Collectors.toList());
+                .filter(integer -> integer > 5)
+                .collect(Collectors.toList());
     }
 
     public static void addToDifferentPosition(List<Integer> myCollection, Map<Integer, Integer> map) {
