@@ -1,4 +1,4 @@
-package PracticalTask._5.Task4;
+package Homework._5.Task4;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -9,27 +9,65 @@ public class Car {
     private int yearOfProduct;
     private double engineCapacity;
 
-    private static Car[] cars = new Car[1];
+    private static Car[] cars = new Car[0];
 
     private static void addCar(Car car){
-        if (cars.length == 1){
-            cars[0] = car;
-        }else {
+        try {
             cars = Arrays.copyOf(cars, cars.length + 1);
             cars[cars.length-1] = car;
+        }catch (Exception e){
+            cars[0] = car;
         }
     }
 
+    public static Car[] getCarsOfYear (int year){
+        Car[] sameYearCars = new Car[0];
+        for(Car car: cars){
+            if(car.yearOfProduct!=year){
+                continue;
+            }
+            try {
+                sameYearCars = Arrays.copyOf(sameYearCars, sameYearCars.length + 1);
+                sameYearCars[sameYearCars.length-1] = car;
+            }catch (Exception e){
+                sameYearCars[0] = car;
+            }
+        }
+        return sameYearCars;
+    }
 
+    public static Car[] getSortedCars(){
+        Car[] tmpCars = cars;
+        Car tmp;
+        for (int i = 0; i < tmpCars.length - 1; i++) {
+            for (int j = i + 1; j < tmpCars.length; j++) {
+                if (tmpCars[i].getYearOfProduct() < tmpCars[j].getYearOfProduct()) {
+                    tmp = tmpCars[i];
+                    tmpCars[i] = tmpCars[j];
+                    tmpCars[j] = tmp;
+                }
+            }
+        }
+        return tmpCars;
+    }
 
+    public static Car[] getSortedCars(Car[] cars){
+        Car tmp;
+        for (int i = 0; i < cars.length - 1; i++) {
+            for (int j = i + 1; j < cars.length; j++) {
+                if (cars[i].getYearOfProduct() < cars[j].getYearOfProduct()) {
+                    tmp = cars[i];
+                    cars[i] = cars[j];
+                    cars[j] = tmp;
+                }
+            }
+        }
+        return cars;
+    }
 
     @Override
     public String toString() {
-        return "[" +
-                "type: '" + type + '\'' +
-                ", year: " + yearOfProduct +
-                ", engine: " + engineCapacity +
-                "l]";
+        return "\t" + type  + ",\t"+ yearOfProduct + "y.,\t" + engineCapacity + "l;";
     }
 
     @Override
@@ -54,6 +92,10 @@ public class Car {
 
     public Car(){
         addCar(this);
+    }
+
+    public static Car[] getCars() {
+        return cars;
     }
 
     public String getType() {

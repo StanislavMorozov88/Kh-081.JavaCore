@@ -1,4 +1,4 @@
-package PracticalTask._5;
+package Homework._5;
 
 import Experiments.ConsoleMenuWrap;
 import java.util.Arrays;

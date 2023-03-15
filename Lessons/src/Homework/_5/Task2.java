@@ -41,9 +41,9 @@ public class Task2 {
         page.addLine("Your numbers: ");
         page.addLine(Arrays.toString(numbers));
         if(isAllPositive){
-            page.addLine("The sum of the first five numbers is "+ total);
+            page.addLine("The sum of the first five numbers is " + total);
         }else {
-            page.addLine("The product of the last five numbers is "+ total);
+            page.addLine("The product of the last five numbers is " + total);
         }
         page.show();
 
