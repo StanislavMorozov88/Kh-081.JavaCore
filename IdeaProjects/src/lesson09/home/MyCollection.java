@@ -20,17 +20,16 @@ public class MyCollection {
     }
 
     public void threeDigitBeforeFirstNegative() {
-        List<Integer> toAdd = getRandomList(-10, 10, 3);
         myCollection = new LinkedList<>(myCollection);
         Integer firstNegative = myCollection.stream()
-                .filter(t -> t < 0)
-                .findFirst()
+                .filter(t -> t < 0).findFirst()
                 .orElse(null);
         int indexOfNegative;
         if (firstNegative != null) {
+            int toAdd = new Random().nextInt(999-100)+100;
             indexOfNegative = myCollection.indexOf(firstNegative);
-            myCollection.addAll(indexOfNegative, toAdd);
-            System.out.println("Adding a list " + toAdd + " to a position " + indexOfNegative);
+            myCollection.add(indexOfNegative, toAdd);
+            System.out.println("Adding " + toAdd + " to a position " + indexOfNegative);
         } else System.out.println("No negative number in a list");
     }
 

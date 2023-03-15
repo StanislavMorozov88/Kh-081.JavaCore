@@ -10,7 +10,7 @@ public class MyCollectionTest {
         System.out.println("myCollection list after swapping: " + myCollection.getMyCollection());
 
         myCollection.threeDigitBeforeFirstNegative();
-        System.out.println("myCollection list after adding 3 digits before first negative (if any): " + myCollection.getMyCollection());
+        System.out.println("myCollection list after adding 3-digits number before first negative (if any): " + myCollection.getMyCollection());
 
         myCollection.zeroBetweenDifferentSignNeighbors();
         System.out.println("myCollection list after adding 0 between neighboring elements with different signs: " + myCollection.getMyCollection());
