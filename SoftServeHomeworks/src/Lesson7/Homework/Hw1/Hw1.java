@@ -2,7 +2,6 @@ package Lesson7.Homework.Hw1;
 
 import java.util.Arrays;
 
-
 public class Hw1 {
     public static void main(String[] args) {
         Employee[] employees = {new ContractEmployee("Oleh", 107, 15000, 32132),
@@ -15,21 +14,33 @@ public class Hw1 {
                 new SalariedEmployee("Xxx", 102, 700, 30, 23131)
         };
 
+//        for (int i = 0; i < employees.length; i++) {
+//            System.out.println(employees[i].getSalary() + "  " + employees[i].getName());
+//        }
 
-        for (int i = 0; i < employees.length; i++) {
-            System.out.println(employees[i].getSalary() + "  " + employees[i].getName());
+        for (Employee employee : employees) {
+            System.out.println(employee.getSalary() + "  " + employee.getName());
         }
 
         Arrays.sort(employees, new Employee());
         System.out.println(Arrays.toString(employees));
+//        for (int i = 0; i < employees.length; i++) {
+//            if (employees[i] instanceof SalariedEmployee) {
+//                System.out.println(((SalariedEmployee) employees[i]).getSocialSecurityNumber() +
+//                        "  " + employees[i].getSalary() + "  " + employees[i].getName());
+//            } else if (employees[i] instanceof ContractEmployee) {
+//                System.out.println(((ContractEmployee) employees[i]).getFederalTaxIdMember() +
+//                        "  " + employees[i].getSalary() + "  " + employees[i].getName());
+//            }
 
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i] instanceof SalariedEmployee) {
-                System.out.println(((SalariedEmployee) employees[i]).getSocialSecurityNumber() + "  " + employees[i].getSalary() + "  " + employees[i].getName());
-            } else if(employees[i] instanceof ContractEmployee) {
-                System.out.println(((ContractEmployee) employees[i]).getFederalTaxIdMember() + "  " + employees[i].getSalary() + "  " + employees[i].getName());
-            }
-
+            for (Employee employee : employees) {
+                if (employee instanceof SalariedEmployee) {
+                    System.out.println(((SalariedEmployee) employee).getSocialSecurityNumber() +
+                            "  " + employee.getSalary() + "  " + employee.getName());
+                } else if (employee instanceof ContractEmployee) {
+                    System.out.println(((ContractEmployee) employee).getFederalTaxIdMember() +
+                            "  " + employee.getSalary() + "  " + employee.getName());
+                }
 
             }
         }

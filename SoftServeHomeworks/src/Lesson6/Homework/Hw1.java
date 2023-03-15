@@ -5,7 +5,7 @@ public class Hw1 {
         Bird[] birds = new Bird[4];
         birds[0] = new Chicken();
         birds[1] = new Penguin();
-        birds[2] =new Eagle();
+        birds[2] = new Eagle();
         birds[3] = new Swallow();
 
 

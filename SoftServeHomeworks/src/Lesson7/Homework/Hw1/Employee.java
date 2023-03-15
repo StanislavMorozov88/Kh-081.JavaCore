@@ -2,12 +2,12 @@ package Lesson7.Homework.Hw1;
 
 import java.util.Comparator;
 
-public  class Employee implements Payment, Comparator<Employee> {
+public class Employee implements Payment, Comparator<Employee> {
     private int employeeId;
     private String name;
-    private  int salary;
+    private int salary;
 
-    public Employee(){
+    public Employee() {
 
     }
 
@@ -21,7 +21,7 @@ public  class Employee implements Payment, Comparator<Employee> {
 
     public Employee(int employeeId, String name) {
         this.employeeId = employeeId;
-        this.name=name;
+        this.name = name;
     }
 
 
@@ -31,10 +31,10 @@ public  class Employee implements Payment, Comparator<Employee> {
     }
 
 
-
     public String getName() {
         return name;
     }
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -50,13 +50,13 @@ public  class Employee implements Payment, Comparator<Employee> {
 
     // just for me
     @Override
-    public int compare(Employee e1, Employee e2){
+    public int compare(Employee e1, Employee e2) {
         int byName = e1.getName().compareTo(e2.getName());
-        if(e1.getSalary() - e2.getSalary() == 0){
+        if (e1.getSalary() - e2.getSalary() == 0) {
             return byName;
         }
         return e1.getSalary() - e2.getSalary();
-        }
+    }
 }
 
 
