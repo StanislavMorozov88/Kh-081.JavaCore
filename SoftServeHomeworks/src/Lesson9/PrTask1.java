@@ -32,6 +32,7 @@ public class PrTask1 {
         System.out.println();
 
 
+
         myCollection.set(0, 1);
         myCollection.set(1, -3);
         myCollection.set(2, -4);
