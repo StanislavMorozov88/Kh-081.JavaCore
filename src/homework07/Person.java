@@ -23,7 +23,7 @@ abstract public class Person {
 
         @Override
         public String activity() {
-            return "I like be funny))";
+            return "I study at university ";
         }
 
         public FullName(String firstName, String lastName, int age, String fullName) {
@@ -56,8 +56,8 @@ abstract public class Person {
                     '}';
         }
 
-        public void info() {
-            System.out.println("First name: " + firstName + ", Last name: " + lastName + ", Age: " + getAge());
+        public String info() {
+            return ("First name: " + firstName + ", Last name: " + lastName + ", Age: " + getAge());
         }
 
     }
