@@ -1,0 +1,157 @@
+//Create an array of ten integers. Display 
+//the biggest of these numbers;
+//the sum of positive numbers in the array;
+//the amount of negative numbers in the array.
+      // What values there are more: negative or positive?
+
+import java.util.Random;
+
+public class Arraypt1 {
+    public static void main(String[] args) {
+        Random myrand = new Random();
+        // array of 10 integers
+        int[] arr = new int[10];
+        System.out.println("\n" + "Array of 10 integers: ");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = myrand.nextInt(-15, 15);
+            System.out.println("\n" + arr[i]);
+        }
+
+        //biggest number
+        int max = arr[0];
+        int imax = 0;
+        int i = 0;
+        while (i < arr.length) {
+            if (arr[i] > max) {
+                max = arr[i];
+                imax = i;
+            }
+            i++;
+        }
+        System.out.println("\n" + "Maximum value of array: " + max + "\n");
+
+
+        //sum of positive numbers
+        int sum = 0;
+        for (int j = 0; j < arr.length; j++) {
+            //System.out.println("j= " + j + " Sum= " + sum + " Arr item: " + arr[j]);
+            if (arr[j] > 0) {
+                sum += arr[j];
+            }
+        }
+        System.out.println("Sum of positive value: " + sum + "\n");
+
+        //the amount of negative numbers in the array
+        int amount = 0;
+
+        for (int a : arr) {
+            if (a < 0) {
+                amount++;
+                }
+            }
+        System.out.println("Amount of negative numbers: " + amount);
+
+        //more neg
+	//doesnt work
+        int negative = arr[0];
+        int morenegative = 0;
+        int g = 0;
+        while ( g<arr.length){
+            if(arr[g]>=-15 && arr[g]<0){
+                negative = arr[g];
+                morenegative = g;
+
+            }
+        }
+        System.out.println( "negative " + (arr[g]));
+    }
+}
+
+============================================================
+
+//Create a class Employee with fields name, department number, salary. 
+//Create five objects of class Employee. Display
+//all employees of a certain department (enter department number in the console);
+//arrange workers by the field salary in descending order.
+
+
+import java.util.Scanner;
+
+public class Employee {
+    private String name;
+    private int depNum;
+    private double salary;
+
+    public Employee(String name, int depNum, double salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getDepNum() {
+        return depNum;
+    }
+
+    public void setDepNum(int depNum) {
+        this.depNum = depNum;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public static void main(String[] args) {
+        Employee emp1 = new Employee("Kira", 145666, 1960.6);
+        Employee emp2 = new Employee("Jenya", 100021, 900.3);
+        Employee emp3 = new Employee("Vasya", 145666, 1100.1);
+        Employee emp4 = new Employee("Oleg", 145666, 1306.4);
+        Employee emp5 = new Employee("Misha", 8744444, 1670.2);
+
+        System.out.println("Enter department number (145666, 100021, 8744444): ");
+        Scanner sc = new Scanner(System.in);
+        int depNum = sc.nextInt();
+
+        switch (depNum) {
+            case 145666:
+                System.out.println((emp1.name) + "\n" + (emp3.name) + "\n" + (emp4.name));
+                break;
+            case 100021:
+                System.out.println(emp2.name);
+                break;
+            case 8744444:
+                System.out.println(emp5.name);
+                break;
+            default:
+                System.out.println("No such department. ");
+                sc.close();
+        }
+
+        System.out.println("\n" + "Workers by the salary in descending order: ");
+        double[] arr = {emp1.getSalary(), emp2.getSalary(), emp3.getSalary(), emp4.getSalary(), emp5.getSalary()};
+        double tmp;
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] < arr[j]) {
+                    tmp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = tmp;
+                }
+            }
+        }
+        for (int i = 0; i < arr.length; i++) {
+			//display only salary in descending 	
+            System.out.println(arr[i]);
+        }
+    }
+}
