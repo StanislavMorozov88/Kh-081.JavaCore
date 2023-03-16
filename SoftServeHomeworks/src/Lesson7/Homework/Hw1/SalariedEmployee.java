@@ -1,13 +1,12 @@
 package Lesson7.Homework.Hw1;
 
-
 import java.util.Objects;
 
 public class SalariedEmployee extends Employee implements Payment {
     private int hourlyPaid;
     private int socialSecurityNumber;
     private int numbersOfWorkingHours;
-    private int salary = calculatePay();
+    private int salary; //= calculatePay();
 
     public int getSocialSecurityNumber() {
         return socialSecurityNumber;
@@ -18,14 +17,12 @@ public class SalariedEmployee extends Employee implements Payment {
         this.numbersOfWorkingHours = numbersOfWorkingHours;
         this.hourlyPaid = hourlyPaid;
         this.socialSecurityNumber = socialSecurityNumber;
-        salary = calculatePay();
+        this.salary = calculatePay();//так краще
     }
 
     public int calculatePay(){
       return  hourlyPaid*numbersOfWorkingHours;
     }
-
-
 
     public int getSalary() {
         return salary;
@@ -35,12 +32,6 @@ public class SalariedEmployee extends Employee implements Payment {
     public int compare(Employee e1, Employee e2) {
         return e1.getSalary() - e2.getSalary();
     }
-
-
-
-
-
-
 
     @Override
     public String toString() {
@@ -64,3 +55,4 @@ public class SalariedEmployee extends Employee implements Payment {
         return Objects.hash(hourlyPaid, socialSecurityNumber, numbersOfWorkingHours);
     }
 }
+

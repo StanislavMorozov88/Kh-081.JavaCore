@@ -4,6 +4,7 @@ public class Hw1 {
     public static void main(String[] args) throws CloneNotSupportedException {
         Student s1 = new Student(new FullName("Bob", "Smith"), 20,3);
         Student s2 = new Student(new FullName("Tod", "Brown"), 18,1);
+        // якщо у тебе одне і те саме, то поміщай в цикл
         System.out.println(s1.info());
         System.out.println(s1.activity());
         System.out.println(s2.info());
