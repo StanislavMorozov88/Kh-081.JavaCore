@@ -8,7 +8,7 @@ public class Main {
                 new Sedan("Camry", 270, 2010),
                 new Truck("Ram", 160, 2006),
                 new Sedan("Beetle", 220, 2010),
-                new Sedan("Jeep", 300, 2010)
+                new Truck("Jeep", 240, 2012)
         };
 
         for (Car car: cars){
