@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class EmployeeMap {
     public static final Scanner SC = new Scanner(System.in);
 
-    public static void printIdByName(Map<Integer, String> employeeMap) {
+    public static void printNameById(Map<Integer, String> employeeMap) {
         int id = readID();
         if (employeeMap.containsKey(id)) {
             String name = employeeMap.get(id);
@@ -17,7 +17,7 @@ public class EmployeeMap {
         }
     }
 
-    public static void printNameById(Map<Integer, String> employeeMap) {
+    public static void printIdByName(Map<Integer, String> employeeMap) {
         String name = readName();
         if (!employeeMap.containsValue(name)) {
             System.out.println("No employee with such ID.");
