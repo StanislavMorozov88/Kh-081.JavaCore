@@ -2,6 +2,7 @@ package pract08;
 
 import javax.security.auth.login.CredentialNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class TestCollection {
     public static void main(String[] args) {
@@ -21,15 +22,30 @@ public class TestCollection {
 
         ArrayList<Integer> newCollection = new ArrayList<>();
 
-        for (int i = 0; i < myCollection.size(); i++) {
+        for (int i = 5; i < myCollection.size(); i++) {
             if (myCollection.get(i) > 5) {
                 newCollection.add(myCollection.get(i));
             }
-
-            //System.out.println(newCollection);
-
         }
         System.out.println(newCollection);
 
+        for (int i = 0; i < myCollection.size(); i++) {
+            if (myCollection.get(i) > 20) {
+                myCollection.remove(i);
+            }
+        }
+        System.out.println(myCollection);
+
+        myCollection.add(2, 1);
+        myCollection.add(8, -3);
+        myCollection.add(5, -4);
+
+        System.out.println(myCollection);
+        for (int i = 0; i < myCollection.size(); i++) {
+            System.out.println("position - " + i + ", value of element - " + myCollection.get(i));
+        }
+
+        Collections.sort(myCollection);
+        System.out.println(myCollection);
     }
 }
