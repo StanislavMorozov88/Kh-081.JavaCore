@@ -1,4 +1,4 @@
-package Homework._6.BirdsTask;
+package Homework._6.Task1;
 
 public abstract class Bird {
 

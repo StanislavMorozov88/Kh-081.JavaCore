@@ -1,9 +1,9 @@
-package Homework._6.BirdsTask;
+package Homework._6.Task1;
 
-import Homework._6.BirdsTask.Birds.Chicken;
-import Homework._6.BirdsTask.Birds.Eagle;
-import Homework._6.BirdsTask.Birds.Penguin;
-import Homework._6.BirdsTask.Birds.Swallow;
+import Homework._6.Task1.Birds.Chicken;
+import Homework._6.Task1.Birds.Eagle;
+import Homework._6.Task1.Birds.Penguin;
+import Homework._6.Task1.Birds.Swallow;
 
 public class Main {
     public static void main(String[] args) {
