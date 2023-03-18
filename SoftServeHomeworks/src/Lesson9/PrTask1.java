@@ -9,7 +9,7 @@ public class PrTask1 {
         Random r = new Random();
 
         for (int i = 0; i < 10; i++) {
-            int rnd = r.nextInt(-20,50);
+            int rnd = r.nextInt(-30,30);
             myCollection.add(rnd);
         }
         System.out.println("Default myCollection: " + myCollection);
@@ -27,9 +27,17 @@ public class PrTask1 {
 
 
 
-        myCollection.removeIf(x-> x > 20); // Знайшов тільки такий спосіб для видалення
-        System.out.println("myCollection less than 20: " + myCollection);
-        System.out.println();
+//        myCollection.removeIf(x-> x > 20); // Знайшов тільки такий спосіб для видалення
+//        System.out.println("myCollection less than 20: " + myCollection);
+//        System.out.println();
+
+        for (int i = 0; i < myCollection.size(); i++) {
+            if(myCollection.get(i) > 20){
+                myCollection.remove(i);
+                i--;
+            }
+        }
+        System.out.println("myCollection with removed numbers which more than 20: " + myCollection);
 
 
 
