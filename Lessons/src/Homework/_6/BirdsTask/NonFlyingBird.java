@@ -1,4 +1,4 @@
-package Homework._6;
+package Homework._6.BirdsTask;
 
 public abstract class NonFlyingBird extends Bird {
 

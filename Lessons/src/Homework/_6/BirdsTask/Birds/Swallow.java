@@ -1,6 +1,6 @@
-package Homework._6.Birds;
+package Homework._6.BirdsTask.Birds;
 
-import Homework._6.FlyingBird;
+import Homework._6.BirdsTask.FlyingBird;
 
 public class Swallow extends FlyingBird {
 

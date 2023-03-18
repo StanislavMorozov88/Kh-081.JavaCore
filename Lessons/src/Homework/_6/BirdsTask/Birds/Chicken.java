@@ -1,6 +1,6 @@
-package Homework._6.Birds;
+package Homework._6.BirdsTask.Birds;
 
-import Homework._6.NonFlyingBird;
+import Homework._6.BirdsTask.NonFlyingBird;
 
 public class Chicken extends NonFlyingBird {
 
