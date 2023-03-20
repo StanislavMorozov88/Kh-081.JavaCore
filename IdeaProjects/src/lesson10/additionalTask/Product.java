@@ -45,7 +45,7 @@ public class Product {
     }
 
     public static void printValues(Map<String, Product> productMap) {
-        productMap.values().forEach(v-> System.out.println(v));
+        productMap.values().forEach(System.out::println);
     }
 
     public static void printKeySet(Map<String, Product> productMap) {
