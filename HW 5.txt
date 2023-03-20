@@ -1,0 +1,184 @@
+import java.util.Random;
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Arrayhw1 {
+    public static void main(String[] args) {
+        //Ask user to enter the number of month. Read the value and
+        // write the number of days in this month (create array with
+        // amount days of each month).
+        int[] month = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        System.out.println("Please, enter the number of month (1-12): ");
+        Scanner scan = new Scanner(System.in);
+        int mon = scan.nextInt();
+        if (mon == 1 || mon == 3 || mon == 5 || mon == 7 || mon == 8 || mon == 10 || mon == 12) {
+        } else if (mon == 2) {
+        } else if (mon == 4 || mon == 6 || mon == 9 || mon == 11) {
+        } else {
+            System.out.println("No this month!!! ");
+        }
+        System.out.println("Number of days: " + month[mon]);
+        scan.close();
+
+
+        //Enter 10 integer numbers. Calculate the sum of first 5 elements
+        // if they are positive or product of last 5 element in the other case.
+        Random myrand = new Random();
+        int[] arr = new int[10];
+        System.out.println("\n" + "Array of 10 integers: ");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = myrand.nextInt(-10, 10);
+            System.out.println("\n" + arr[i] + "\n");
+        }
+        //sum of first 5 (only positive) elements
+        int sum = 0;
+        for (int i = 0; i < arr.length - 5; i++) {
+            if (arr[i] > 0) {
+                sum += arr[i];
+            }
+        }
+        System.out.println("Sum of positive value: " + sum + "\n");
+
+        //product of last 5 (only positive) element
+        int product = 1;
+        for (int a = 5; a < arr.length; a++) {
+            if (arr[a] > 0) {
+                product = product * arr[a];
+            }
+        }
+        System.out.println("Product: " + product);
+
+        //5 integer numbers. Find
+        //position of second positive number;
+        //  minimum and its position in the array.
+        Random newrand = new Random();
+        int[] arr3 = new int[5];
+        int j = arr3.length;
+        System.out.println("\n" + "Array of 5 integers: ");
+        for (int i = 0; i < arr3.length; i++) {
+            arr3[i] = newrand.nextInt(-20, 20);
+            System.out.println("\n" + arr3[i] + "\n");
+        }
+        Arrays.sort(arr3);
+        int highest = Integer.MIN_VALUE;
+        int secondHighest = Integer.MIN_VALUE;
+        for (int k = 0; k < j; k++) {
+            if (arr3[k] > highest) {
+                secondHighest = highest;
+                highest = arr3[k];
+            }
+            if (arr3[k] < highest && arr3[k] > secondHighest) {
+                secondHighest = arr3[k];
+            }
+        }
+        System.out.println("Second number position: " + secondHighest);
+
+    }
+}
+
+=============================================
+
+
+//Create class Car with fields type, year of production and engine capacity.
+// Create and initialize four instances of class Car. Display cars
+//certain model year  (enter year in the console);
+//ordered by the field year.
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Car {
+    private String carType;
+    private int year;
+    private double capacity;
+
+    //constructor
+    public Car(String carType, int year, double capacity) {
+        this.carType = carType;
+        this.year = year;
+        this.capacity = capacity;
+    }
+
+
+    //getter and setter
+    public String getCarType() {
+        return carType;
+    }
+
+    public void setCarType(String carType) {
+        this.carType = carType;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public double getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(double capacity) {
+        this.capacity = capacity;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "carType='" + carType + '\'' +
+                ", year=" + year +
+                ", capacity=" + capacity +
+                '}';
+    }
+
+
+        public static void main(String[] args) {
+            Car car1 = new Car("Toyota", 2007, 2.0);
+            Car car2 = new Car("Skoda", 2011, 1.4);
+            Car car3 = new Car("Audi", 2002, 1.8);
+            Car car4 = new Car("BMW", 1999, 2.2);
+
+            Car[] car = {car1, car2, car3, car4};
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Input year of car: ");
+            int year = sc.nextInt();
+
+            //certain model year  (enter year in the console);
+            if (year == car1.year) {
+                System.out.println("Info about car: " + car1.carType + "\n" + car1.capacity);
+            } else if (year == car2.year) {
+                System.out.println("Info about car: " + car2.carType + "\n" + car2.capacity);
+            } else if (year == car3.year) {
+                System.out.println("Info about car: " + car3.carType + "\n" + car3.capacity);
+            } else if (year == car4.year) {
+                System.out.println("Info about car: " + car4.carType + "\n" + car4.capacity);
+            } else {
+                System.out.println("No such car. ");
+            }
+
+            //ordered by the field year (sorting)
+       /* for (int i = 0; i < car.length - 1; i++) {
+            for (int j = i + 1; j < car.length; j++) {
+                if (car1.year > car2.year && car1.year > car3.year && car1.year > car4.year) {
+                    System.out.println(car1.carType + car1.capacity);
+                } else if (car2.year > car1.year && car2.year > car3.year && car2.year > car4.year) {
+                    System.out.println(car2.carType + car2.capacity);
+                } else if (car3.year > car1.year && car3.year > car2.year && car3.year > car4.year) {
+                    System.out.println(car3.carType + car3.capacity);
+                } else if (car4.year > car1.year && car4.year > car2.year && car4.year > car3.year) {
+                    System.out.println(car4.carType + car4.capacity);
+                }
+            }
+        }
+        for (int i = 0; i < car.length; i++) {
+            System.out.println(car[i]);
+        } */
+            System.out.println(Arrays.toString(car));
+            for (Car cars : car) {
+                System.out.println(cars);
+            }
+        }
+    }
