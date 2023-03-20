@@ -17,11 +17,11 @@ public class Home02 {
         }
     }
 
-    private static boolean hasDuplicateValues(Map<String, String> personMap) {
+    public static boolean hasDuplicateValues(Map<String, String> personMap) {
         return personMap.values().stream().distinct().count() < personMap.size();
     }
 
-    private static void removeByFirstName(Map<String, String> personMap, String firstName) {
+    public static void removeByFirstName(Map<String, String> personMap, String firstName) {
         if (personMap.containsValue(firstName)) {
             personMap.values().removeIf(firstName::equals);
         } else {
