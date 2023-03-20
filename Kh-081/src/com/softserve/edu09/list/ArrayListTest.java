@@ -1,6 +1,7 @@
 package com.softserve.edu09.list;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class ArrayListTest {
@@ -11,8 +12,16 @@ public class ArrayListTest {
         list.add("2-d element");
         list.add("3-rd element");
         list.add("6-th element");
-        list.add(0,"zero element");
-       // list.add(8, "8-th element"); //error
+        list.add(0, "zero element");
+        // list.add(8, "8-th element"); //error
+
+        Iterator<String> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            iterator.next();
+            iterator.remove();
+        }
+        System.out.println(list);
+
 
         System.out.println(list);
         System.out.println(list.size());
@@ -26,8 +35,10 @@ public class ArrayListTest {
         list2.add("5-th element");
         System.out.println(list2);
     }
-    public static <T> T getElement(ArrayList<T> list){
+
+    public static <T> T getElement(ArrayList<T> list) {
         return list.get(1);
+
     }
 }
 
