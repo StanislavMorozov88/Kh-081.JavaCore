@@ -1,0 +1,92 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Car {
+    private String carType;
+    private int year;
+    private double capacity;
+
+    //constructor
+    public Car(String carType, int year, double capacity) {
+        this.carType = carType;
+        this.year = year;
+        this.capacity = capacity;
+    }
+
+
+    //getter and setter
+    public String getCarType() {
+        return carType;
+    }
+
+    public void setCarType(String carType) {
+        this.carType = carType;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public double getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(double capacity) {
+        this.capacity = capacity;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "carType='" + carType + '\'' +
+                ", year=" + year +
+                ", capacity=" + capacity +
+                '}';
+    }
+
+    public int compareTo(Integer y) {
+        return this.year - y.compareTo(year);
+    }
+
+    public static void main(String[] args) {
+        Car car1 = new Car("Toyota", 2007, 2.0);
+        Car car2 = new Car("Skoda", 2011, 1.4);
+        Car car3 = new Car("Audi", 2002, 1.8);
+        Car car4 = new Car("BMW", 1999, 2.2);
+
+        Car[] car = {car1, car2, car3, car4};
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Input year of car: ");
+        int year = sc.nextInt();
+
+        //certain model year  (enter year in the console);
+        if (year == car1.year) {
+            System.out.println("Info about car: " + car1.carType + "\n" + car1.capacity);
+        } else if (year == car2.year) {
+            System.out.println("Info about car: " + car2.carType + "\n" + car2.capacity);
+        } else if (year == car3.year) {
+            System.out.println("Info about car: " + car3.carType + "\n" + car3.capacity);
+        } else if (year == car4.year) {
+            System.out.println("Info about car: " + car4.carType + "\n" + car4.capacity);
+        } else {
+            System.out.println("No such car. ");
+        }
+
+        //ordered by the field year (sorting)
+        Car a;
+        for (int i = 0; i < car.length - 1; i++) {
+            for (int j = i + 1; j < car.length; j++) {
+                if (car[i].getYear() < car[j].getYear()) {
+                    a = car[i];
+                    car[i] = car[j];
+                    car[j] = a;
+                }
+            }
+        }
+        System.out.println("\n"+"Cars by the year: " + Arrays.toString(car));
+    }
+}
