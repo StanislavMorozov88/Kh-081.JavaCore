@@ -32,6 +32,8 @@ public class PrTask2 {
                 System.out.println("It is not a day of the week");
 
 
+
+
         }}
     }
 

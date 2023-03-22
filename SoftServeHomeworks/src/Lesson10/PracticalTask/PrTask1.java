@@ -1,7 +1,9 @@
-package Lesson10;
+package Lesson10.PracticalTask;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 public class PrTask1 {
     public static void main(String[] args) {
@@ -27,27 +29,18 @@ public class PrTask1 {
         }
 
 
+        System.out.println("Enter the user name ");
 
-         System.out.println("Enter the user name ");
 
-
-            String name = sc.nextLine(); // ПОЧЕМУ НЕ ВІЗІВАЕТСЯ???? ПОКА НЕ ДОДЕЛАЛ, НЕ ПОНИМАЮ ЧЕГО НУЛЛ ВЫХОДИТ
+        String name = sc.nextLine(); // ПОЧЕМУ НЕ ВІЗІВАЕТСЯ???? ПОКА НЕ ДОДЕЛАЛ, НЕ ПОНИМАЮ ЧЕГО НУЛЛ ВЫХОДИТ
         name = sc.nextLine();
-
-
-
-            if (employeeMap.containsValue(name)) {
-                System.out.println(employeeMap.get(name));
-            } else {
-                System.out.println("We can't find this user, try to find with ID ");
-                int scanId = sc.nextInt();
-                if (employeeMap.containsKey(scanId)) {
-                    System.out.println(employeeMap.get(scanId));
-                } else {
-                    System.out.println("We can't find this user");
-                }
+        for (Map.Entry<Integer, String> entries : employeeMap.entrySet()) {
+            if (entries.getValue().equals(name)) {
+                System.out.println(entries.getKey()+" " +entries.getValue());
             }
-            sc.close();
+        }
+        if (!employeeMap.containsValue(name)) {
+            System.out.println("We can't find this user");
         }
     }
-
+}
