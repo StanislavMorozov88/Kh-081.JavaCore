@@ -12,8 +12,8 @@ import java.util.*;
  * Remove from the map person whose firstName is ”Orest” (or other). Print result.
  * 3) Write class Student that provides information about the name of the student and his course.
  * Class Student should consist of
- *  properties for access to these fields
- *  constructor with parameters
+ * properties for access to these fields
+ * constructor with parameters
  * method printStudents (List students, Integer course),
  * which receives a list of students and the course number
  * and prints to the console the names of the students from the list,
@@ -55,16 +55,31 @@ public class Hw {
         printMap(personMap);
         //Remove from the map person whose firstName is ”Orest” (or other)
         System.out.println("    Persons without Emily:");
-        removePersonByKey(personMap,"Emily");
+        removePersonByKey(personMap, "Emily");
         printMap(personMap);
         //There are at less two persons with the same firstName among these 10 people?
         //No, because its out key, we cant have spots with same keys.
         //If even we have, map just rewrites spot to last with same key.
-        //If i must create method that checks it, idk how to do it .-.
+        //If I must create method that checks it, idk how to do it .-.
         //im sorry :(
 
+        //Ex3
+        List<Student> students = new ArrayList<>(List.of(
+                new Student("Mick", 1),
+                new Student("John", 1),
+                new Student("Sara", 2),
+                new Student("Leo", 3),
+                new Student("Nick", 2)
+        ));
+        System.out.println("\nPrint the names of the students, which are taught in this course: ");
+        Student.printStudent(students, 1);
+        students.sort(Student.NameComparator);
+        System.out.println("Sort students by name: " + students);
+        students.sort(Student.CourseComparator);
+        System.out.println("Sort students by course: " + students);
 
     }
+
     /**
      * Fill Set with int random nums
      */
@@ -95,19 +110,19 @@ public class Hw {
     /**
      * Output the entities of the map on the screen
      */
-    public static void printMap(Map<String, String> map){
+    public static void printMap(Map<String, String> map) {
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            System.out.println("FirstName: " + entry.getKey() + "; LastName: " + entry.getValue()+".");
+            System.out.println("FirstName: " + entry.getKey() + "; LastName: " + entry.getValue() + ".");
         }
     }
 
     /**
      * Remove from the map person with certain firstName
      */
-    public static Map<String,String> removePersonByKey(Map<String, String> map, String value){
+    public static Map<String, String> removePersonByKey(Map<String, String> map, String value) {
         Map<String, String> temp = new HashMap<>(map);
-        for (Map.Entry<String, String> entry: temp.entrySet()) {
-            if (entry.getKey().equals(value)){
+        for (Map.Entry<String, String> entry : temp.entrySet()) {
+            if (entry.getKey().equals(value)) {
                 map.remove(entry.getKey());
             }
         }
