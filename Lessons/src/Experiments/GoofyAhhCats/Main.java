@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class Main {
-//
+//commit test
   private static void createAndShowGUI() {
 
     JFrame jFrame = new JFrame("About weird cats)");
