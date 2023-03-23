@@ -1,9 +1,11 @@
+package Experiments.GoofyAhhCats;
+
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
 public class Main {
-
+//
   private static void createAndShowGUI() {
 
     JFrame jFrame = new JFrame("About weird cats)");
