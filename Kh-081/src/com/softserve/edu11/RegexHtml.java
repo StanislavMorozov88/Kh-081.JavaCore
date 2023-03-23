@@ -23,7 +23,7 @@ public class RegexHtml {
         m.reset(); // Reset Iterator
         while (m.find()) {
             // System.out.print(" *" + text.substring(m.start(), m.end()) + "* ");
-            System.out.print(text.substring(m.start() + 1, m.end() - 1).trim());//отак виведе текст
+            System.out.print(text.substring(m.start() + 1, m.end() - 1).trim() + " ");//отак виведе текст
         }
     }
 }
