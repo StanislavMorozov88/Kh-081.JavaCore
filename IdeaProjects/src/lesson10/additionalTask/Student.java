@@ -2,6 +2,7 @@ package lesson10.additionalTask;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Student {
     private String name;
@@ -65,7 +66,7 @@ public class Student {
     public static void toNextCourse(List<Student> studentList) {
         for (Student student : studentList) {
             if (student.average >= 3) {
-                student.setCourse(student.getCourse() + 1);
+                student.course += 1;
             }
         }
     }
