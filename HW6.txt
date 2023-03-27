@@ -1,0 +1,238 @@
+//Develop abstract class Bird with attributes feathers and layEggs and an abstarct method fly().  
+//Develop classes FlyingBird and NonFlyingBird. Create class Eagle, Swallow, Penguin and Chicken. 
+//Create array Bird and add different birds to it. 
+//Call fly() method for all of it. Output the 
+//information about each type of created bird.
+
+
+public abstract class Bird {
+    protected String feathers;
+    protected int layEggs;
+
+    public Bird(String feathers, int layEggs) {
+        this.feathers = feathers;
+        this.layEggs = layEggs;
+    }
+
+    public String getFeathers() {
+        return feathers;
+    }
+
+    public void setFeathers(String feathers) {
+        this.feathers = feathers;
+    }
+
+    public int getLayEggs() {
+        return layEggs;
+    }
+
+    public void setLayEggs(int layEggs) {
+        this.layEggs = layEggs;
+    }
+
+    public void fly() {
+    }
+
+    public void infoAboutBird(){}
+    ;
+
+}
+
+class FlyingBird extends Bird {
+    protected double wingSize;
+
+    public FlyingBird(String feathers, int layEggs, double wingSize) {
+        super(feathers, layEggs);
+        this.wingSize = wingSize;
+    }
+
+    @Override
+    public String toString() {
+        return "FlyingBird{" +
+                "wingSize=" + wingSize +
+                '}';
+    }
+}
+
+class Eagle extends FlyingBird {
+    protected String name;
+
+    public Eagle(String feathers, int layEggs, double wingSize, String name) {
+        super(feathers, layEggs, wingSize);
+        this.name = name;
+    }
+
+    public void fly() {
+        System.out.println("Eagles fly high and fast.");
+    }
+    public void infoAboutBird(){
+        System.out.println("Feather: "+ feathers + "\n"+ "Lay eggs: " + layEggs + "\n"
+                + "Wing size: " + wingSize + "\n"+ "Name: " + name);
+    }
+    ;
+}
+
+class Swallow extends FlyingBird {
+    protected int age;
+
+    public Swallow(String feathers, int layEggs, double wingSize, int age) {
+        super(feathers, layEggs, wingSize);
+        this.age = age;
+    }
+
+    public void fly() {
+        System.out.println("Swallows fly high and slowly.");
+    }
+
+    public  void infoAboutBird(){
+        System.out.println("Feather: "+ feathers + "\n"+ "Lay eggs: " + layEggs + "\n"
+                + "Wing size: " + wingSize + "\n"+ "Age: " + age);
+    }
+    ;
+}
+
+class NonFlyingBird extends Bird {
+    protected double walkSpeed;
+
+    public NonFlyingBird(String feathers, int layEggs, double walkSpeed) {
+        super(feathers, layEggs);
+        this.walkSpeed = walkSpeed;
+    }
+
+}
+
+class Penguin extends NonFlyingBird {
+    protected String regionOfLiving;
+
+    public Penguin(String feathers, int layEggs, double walkSpeed, String regionOfLiving) {
+        super(feathers, layEggs, walkSpeed);
+        this.regionOfLiving = regionOfLiving;
+    }
+
+    public void fly() {
+        System.out.println("Penguins can`t fly.");
+    }
+
+    public  void infoAboutBird(){
+        System.out.println("Feather: "+ feathers + "\n"+ "Lay eggs: " + layEggs + "\n"
+                + "Walk speed: " + walkSpeed + "\n"+ "Region of living: " + regionOfLiving);
+    }
+    ;
+}
+
+class Chicken extends NonFlyingBird {
+    protected int longevity;
+
+    public Chicken(String feathers, int layEggs, double walkSpeed, int longevity) {
+        super(feathers, layEggs, walkSpeed);
+        this.longevity = longevity;
+    }
+
+    public void fly() {
+        System.out.println("Chicken can`t fly but run fast");
+    }
+
+    public  void infoAboutBird(){
+        System.out.println("Feather: "+ feathers + "\n"+ "Lay eggs: " + layEggs + "\n"
+                + "Walk speed: " + walkSpeed + "\n"+ "Longevity: " + longevity);
+    }
+    ;
+}
+
+class BirdsArray {
+
+    public static void main(String[] args) {
+
+
+        Bird[] birdsArrays = {new Eagle("grey-brown", 2, 1.5, "Vasen`ka"),
+                new Swallow("black-grey", 3, 0.4, 3),
+                new Penguin("black-white", 1, 0.1, "Antarktika"),
+                new Chicken("yellow-brown", 4, 0.4, 2)};
+
+        for(Bird birds : birdsArrays){
+            birds.fly();
+            birds.infoAboutBird();
+        }
+    }
+}
+
+===========================================================================================
+//Support we have a class Employee
+//Create a Developer class that extends the Employee class.
+// Creates a String field and a constructor to initialize all 
+//fields in the Developer class.
+//Also in the Developer class, override the method report() so that it 
+//returns a string with information about the developer, for example:
+//Name: Taras, Age: 32 years, Position: Average Java developer, Salary: 32735.35
+//If necessary, modify the employee's class so that it meets the principles of
+// encapsulation and inheritance. Create an instance of the Employee and Developer class 
+//and print in the console information about them using report() method. 
+
+
+class Employee {
+    protected String name;
+    protected int age;
+    protected double salary;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public Employee(String name, int age, double salary) {
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
+
+    public String report() {
+        return "Info about employee: " + "\n" + "Name: " + name + "\n"
+                + "Age: " + age + "\n" + "Salary: " + salary + "\n";
+    }
+}
+
+
+class Developer extends Employee {
+    protected String nameDepartment;
+
+    public Developer(String name, int age, double salary, String nameDepartment) {
+        super(name, age, salary);
+        this.nameDepartment = nameDepartment;
+    }
+
+    @Override
+    public String report() {
+        return super.report()  + "Name of department: " + nameDepartment + "\n";
+
+    }
+}
+    class Jobtitle {
+        public static void main(String[] args) {
+
+            Developer developer = new Developer("Kiril", 26, 124700.00, "Devops dep");
+            Employee employee = new Employee("Viktor", 35, 156000.90);
+
+
+            System.out.println(developer.report());
+            System.out.println(employee.report());
+        }
+    }

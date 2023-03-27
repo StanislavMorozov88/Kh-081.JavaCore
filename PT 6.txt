@@ -1,0 +1,222 @@
+//Create abstract class Car with model, maxSpeed and yearOfManufacture
+//properties and run() and stop() methods.
+//Develop classes Truck and Sedan which extend class Car.
+//  In main method create array of Car’s objects. Add to this array
+//  some trucks and sedans and print info about it.
+
+import java.util.Arrays;
+
+public abstract class Car {
+    public String model;
+    protected double maxSpeed;
+    protected int yearOfManufacture;
+
+    public Car() {
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "model='" + model + '\'' +
+                ", maxSpeed=" + maxSpeed +
+                ", yearOfManufacture=" + yearOfManufacture +
+                '}';
+    }
+
+    //gett, sett
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public double getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public void setMaxSpeed(double maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
+    public int getYearOfManufacture() {
+        return yearOfManufacture;
+    }
+
+    public void setYearOfManufacture(int yearOfManufacture) {
+        this.yearOfManufacture = yearOfManufacture;
+    }
+
+    // abstract methods
+    abstract void run();
+
+    abstract void stop();
+
+}
+
+
+class Truck extends Car {
+    public Truck(String model, double maxSpeed, int YearOfManufacture) {
+        this.model = model;
+        this.maxSpeed = maxSpeed;
+        this.yearOfManufacture = YearOfManufacture;
+    }
+
+    void run() {
+        System.out.println("Car is running");
+    }
+
+    void stop() {
+        System.out.println("Car is stop");
+    }
+
+    void infoAboutCar() {
+        System.out.println("Info about Trucks: " + getModel() + "Max speed: " +
+                getMaxSpeed() + "Year of manufacture: " + getYearOfManufacture());
+    }
+
+}
+
+class Sedan extends Car {
+
+    public Sedan(String model, double maxSpeed, int YearOfManufacture) {
+        this.model = model;
+        this.maxSpeed = maxSpeed;
+        this.yearOfManufacture = YearOfManufacture;
+    }
+
+    void run() {
+        System.out.println("Car is running");
+    }
+
+    void stop() {
+        System.out.println("Car is stop");
+    }
+
+    void infoAboutCar() {
+        System.out.println("Info about Sedans: " + getModel() + "Max speed: " +
+                getMaxSpeed() + "Year of manufacture: " + getYearOfManufacture());
+    }
+}
+
+class Box {
+    public static void main(String[] args) {
+        Truck truck1 = new Truck("Ford pick-up ", 184.1, 2009);
+        Truck truck2 = new Truck("Toyota truck ", 178.5, 2006);
+        Sedan sedan1 = new Sedan("Audi ", 190.9, 2017);
+        Sedan sedan2 = new Sedan("Tesla", 201.2, 2013);
+
+        Object[] autobox = {truck1, truck2, sedan1, sedan2};
+
+        for(int i=0; i<autobox.length; i++){
+            if(i>0){}
+        }
+        System.out.println(autobox[1]);
+    }
+}
+
+============================================================================
+//Create three classes:
+//       Point with attributes x and y
+//      Line which contains two object of Point class
+//ColorLine with attributes Color  which extends Line class.
+//     Override method toString() and define method print() in every classes
+//      In main() method create array of Line and add some Line and ColorLine
+//      to it. Call method print() for all of it.
+
+public class Point {
+    private int x;
+    private int y;
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    void print() {
+        System.out.println("x" + x + "\n" + "y" + y);
+    }
+
+
+    @Override
+    public String toString() {
+        return "Point{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
+}
+
+class Line {
+    protected Point point1;
+    protected Point point2;
+
+    public Line(Point point1, Point point2) {
+        this.point1 = point1;
+        this.point2 = point2;
+    }
+
+    void print() {
+    }
+
+    @Override
+    public String toString() {
+        return "Line{}";
+    }
+}
+
+class ColorLine extends Line {
+    protected String color;
+
+    public ColorLine(Point point1, Point point2, String color) {
+        super(point1, point2);
+        this.color = color;
+    }
+
+    void print() {
+        System.out.println("Color " + color);
+    }
+
+
+    @Override
+    public String toString() {
+        return "ColorLine{" +
+                "Color='" + color + '\'' +
+                '}';
+    }
+}
+
+class Testbox1 {
+    public static void main(String[] args) {
+
+        Line line1 = new Line(new Point(5, 9), new Point(7, 11));
+        Line line2 = new Line(new Point(2, 17), new Point(3, 8));
+        ColorLine green = new ColorLine(new Point(8, 11), new Point(-1, 11), "green");
+        ColorLine blue = new ColorLine(new Point(11, 15), new Point(5, 12), "blue");
+
+        Line[] arrayOfLine = {line1, line2, green, blue};
+
+        for (int i = 0; i < arrayOfLine.length; i++) {
+            System.out.println(arrayOfLine[i]);
+        }
+    }
+}
+
+
