@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Task1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter the sentence:");
         String text = scanner.nextLine();
 
         String[] words = text.split(" ");
@@ -19,8 +20,13 @@ public class Task1 {
                 longestLength = length;
             }
         }
-            System.out.println(longestWord);
 
-        }
+        System.out.println(longestWord + " - " + longestLength + " letters");
+
+        StringBuilder sb = new StringBuilder(text);
+        System.out.println(sb.reverse());
+
+
     }
+}
 
