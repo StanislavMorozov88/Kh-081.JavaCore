@@ -24,7 +24,7 @@ public class SetTest {
         Set<String> union = new HashSet<>(set1);
         union.addAll(set2);
         System.out.println(union);
-        
+
         Set<String> intersection = new HashSet<>(set1);
         intersection.retainAll(set2);
         System.out.println(intersection);
