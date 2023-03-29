@@ -3,7 +3,7 @@ package lesson04.hometasks;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Range {
+public class Ranges {
     private static final Scanner SC = new Scanner(System.in);
 
     public static void rangeResult() {
