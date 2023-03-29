@@ -44,7 +44,6 @@ public class PlantTest {
         }
     }
 
-
     public static void main(String[] args) {
         Plant[]plants = new Plant[5];
         fillPlantsArr(plants);

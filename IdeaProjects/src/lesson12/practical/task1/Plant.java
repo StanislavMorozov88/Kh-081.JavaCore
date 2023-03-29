@@ -15,7 +15,7 @@ public class Plant {
     }
 
     public Color colorStringToEnum(String color) throws ColorException {
-        if (color == null||color.isBlank()){
+        if (color == null || color.isBlank()) {
             throw new ColorException("Color is null or empty");
         }
         try {
@@ -26,14 +26,14 @@ public class Plant {
     }
 
     public Type typeStringToEnum(String type) throws TypeException {
-        if (type == null||type.isBlank()){
+        if (type == null || type.isBlank()) {
             throw new TypeException("Type is null or blank");
         }
-       try {
-           return Type.valueOf(type.toUpperCase());
-       }catch (IllegalArgumentException e){
-           throw new TypeException("Incorrect type. Input one of type from list: " + Arrays.toString(Type.values()));
-       }
+        try {
+            return Type.valueOf(type.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            throw new TypeException("Incorrect type. Input one of type from list: " + Arrays.toString(Type.values()));
+        }
     }
 
     public void checkSize(int size) {
