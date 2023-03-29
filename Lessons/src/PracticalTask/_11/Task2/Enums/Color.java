@@ -1,7 +1,6 @@
-package PracticalTask._6.CompositionTask;
+package PracticalTask._11.Task2.Enums;
 
-public enum Colors {
-
+public enum Color {
     RESET ( "\033[0m", "None"),
     BLACK ( "\033[0;30m", "Black"),
     RED ("\033[0;31m", "Red"),
@@ -15,7 +14,7 @@ public enum Colors {
     final String code;
     final String name;
 
-    Colors(String s, String name) {
+    Color(String s, String name) {
         this.code = s;
         this.name = name;
     }
@@ -27,3 +26,5 @@ public enum Colors {
         return this.code;
     }
 }
+
+
