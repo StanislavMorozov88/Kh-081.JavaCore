@@ -17,6 +17,7 @@ package lesson4.hw;
 //        ordered by the field year.
 //5*.  Add Unit Tests to each task, publish code on GitHub
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -24,47 +25,52 @@ public class Main {
         //1.
         Scanner sc = new Scanner(System.in);
         int[] daysInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        System.out.print("Enter num of month: ");
-        int month = sc.nextInt();
-        //check if input is correct
-        if (month <= daysInMonth.length && month > 0) {
-            //write the number of days in this month
-            System.out.println("Days in this month:" + daysInMonth[month - 1]);
+        try {
+            System.out.print("Enter num of month: ");
+            int month = sc.nextInt();
+            //check if input is correct
+            if (month <= daysInMonth.length && month > 0) {
+                //write the number of days in this month
+                System.out.println("Days in this month: " + daysInMonth[month - 1]);
+            } else {
+                throw new InputMismatchException();
+            }
+        } catch (InputMismatchException e) {
+            System.err.println("Wrong input." + "\n");
         }
+        System.out.println(" ");
 
         //2.
         int[] nums = new int[10];
         System.out.println("Enter 10 integer numbers(expect 0):");
-        //input in console
-        inputArr(nums);
+        try {
+            //input in console
+            inputArr(nums);
+            //display array
+            printArray(nums);
+            //calculate the sum or product
+            calc(nums);
+        } catch (InputMismatchException e) {
+            System.err.println(e.getMessage());
+        }
 
-        //test
-        //fillArrayRandom(nums);
-        //
-
-        //display array
-        printArray(nums);
-
-        //calculate the sum or product
-        calc(nums);
 
         //3
         int[] arr = new int[5];
+        try {
+            //input in console
+            inputArr(arr);
+            //display array
+            printArray(arr);
+            //position of second positive number;
+            secondPosNum(arr);
+            //minimum and its position in the array.
+            findMin(arr);
 
-        //input in console
-        inputArr(arr);
+        } catch (InputMismatchException e) {
+            System.err.println(e.getMessage());
+        }
 
-        //test
-        //fillArrayRandom(arr);
-
-        //display array
-        printArray(arr);
-
-        //position of second positive number;
-        secondPosNum(arr);
-
-        //minimum and its position in the array.
-        findMin(arr);
 
         sc.close();
     }
@@ -74,19 +80,22 @@ public class Main {
     //input nums of array in the console
     private static void inputArr(int[] arr) {
         Scanner sc = new Scanner(System.in);
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print("Enter the " + (i + 1) + " number: ");
-            arr[i] = sc.nextInt();
-            //check if input is correct
-            for (int j = 0; j < 1; ) {
-                if (arr[i] == 0) {
-                    System.out.println("Enter another num(expect 0) pls: ");
-                    arr[i] = sc.nextInt();
-                } else {
-                    j = 1;
+        try {
+            for (int i = 0; i < arr.length; i++) {
+                System.out.print("Enter the " + (i + 1) + " number: ");
+                arr[i] = sc.nextInt();
+                //check if input is correct
+                for (int j = 0; j < 1; ) {
+                    if (arr[i] == 0) {
+                        System.out.println("Enter another num(expect 0) pls: ");
+                        arr[i] = sc.nextInt();
+                    } else {
+                        j = 1;
+                    }
                 }
             }
-            //
+        } catch (InputMismatchException e) {
+            throw new InputMismatchException("Input correct num." + "\n");
         }
     }
 

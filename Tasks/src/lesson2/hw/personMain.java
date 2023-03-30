@@ -2,6 +2,7 @@ package lesson2.hw;
 
 import lesson2.pt.Employee;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class personMain {
@@ -23,14 +24,20 @@ public class personMain {
 
         Employee employee2 = new Employee();
 
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter employee name: ");
-        employee2.setName(sc.nextLine());
-        System.out.print("Enter employee rate: ");
-        employee2.setRate(sc.nextFloat());
-        System.out.print("Enter employee hours: ");
-        employee2.setHours(sc.nextInt());
-        System.out.println(employee2);
-        System.out.println("Total salary of all workers: " + Employee.totalSum());
+        //add try catch
+        try {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter employee name: ");
+            employee2.setName(sc.nextLine());
+            System.out.print("Enter employee rate: ");
+            employee2.setRate(sc.nextFloat());
+            System.out.print("Enter employee hours: ");
+            employee2.setHours(sc.nextInt());
+            System.out.println(employee2);
+            System.out.println("Total salary of all workers: " + Employee.totalSum());
+            sc.close();
+        } catch (InputMismatchException e) {
+            System.err.println("Wrong input." + "\n");
+        }
     }
 }

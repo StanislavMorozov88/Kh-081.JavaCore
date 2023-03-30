@@ -1,5 +1,6 @@
 package lesson3.hw;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 //  1. Solve the next tasks:
@@ -81,30 +82,34 @@ public class Main {
         //1 point (3)
         HTTPError httpError = null;
         System.out.print("\nEnter HTTP Error (400, 401, 402, 403, 404): ");
-        int numError = sc.nextInt();
-
-        switch (numError) {
-            case 400:
-                httpError = HTTPError.BadRequest;
-                break;
-            case 401:
-                httpError = HTTPError.Unauthorized;
-                break;
-            case 402:
-                httpError = HTTPError.PaymentRequired;
-                break;
-            case 403:
-                httpError = HTTPError.Forbidden;
-                break;
-            case 404:
-                httpError = HTTPError.NotFound;
-                break;
-            default:
-                System.out.println("Wrong index.");
-                break;
-        }
-        if (httpError != null) {
-            System.out.println(httpError.getName());
+        //add try catch
+        try {
+            int numError = sc.nextInt();
+            switch (numError) {
+                case 400:
+                    httpError = HTTPError.BadRequest;
+                    break;
+                case 401:
+                    httpError = HTTPError.Unauthorized;
+                    break;
+                case 402:
+                    httpError = HTTPError.PaymentRequired;
+                    break;
+                case 403:
+                    httpError = HTTPError.Forbidden;
+                    break;
+                case 404:
+                    httpError = HTTPError.NotFound;
+                    break;
+                default:
+                    System.out.println("Wrong index.");
+                    break;
+            }
+            if (httpError != null) {
+                System.out.println(httpError.getName());
+            }
+        } catch (InputMismatchException e) {
+            System.err.println("Incorrect input" + "\n");
         }
 
         // 2 point
@@ -121,9 +126,9 @@ public class Main {
         //Display the name and the kind of the oldest dog
         if (dog.getAge() > dog1.getAge() && dog.getAge() > dog2.getAge()) {
             System.out.println("\nThe oldest dog:\nName: " + dog.getName() + "\nBreed: " + dog.getBreed());
-        }else if (dog1.getAge() > dog2.getAge()) {
+        } else if (dog1.getAge() > dog2.getAge()) {
             System.out.println("\nThe oldest dog:\nName: " + dog1.getName() + "\nBreed: " + dog1.getBreed());
-        }else {
+        } else {
             System.out.println("\nThe oldest dog:\nName: " + dog2.getName() + "\nBreed: " + dog2.getBreed());
         }
 
