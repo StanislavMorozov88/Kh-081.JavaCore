@@ -16,7 +16,7 @@ public class MainStudent {
         System.out.println(students);
         System.out.println("-------------------------------------------------------");
         System.out.println("Sorted students by course:");
-        students.sort(new Student.byCourse());
+        students.sort(new Student.ByCourse());
         System.out.println(students);
         System.out.println("-------------------------------------------------------");
         students.sort(new Student.ByName());

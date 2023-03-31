@@ -20,7 +20,7 @@ public class Student implements Comparable<Student> {
         }
     }
 
-    public static class byCourse implements Comparator<Student> {
+    public static class ByCourse implements Comparator<Student> {
 
         @Override
         public int compare(Student o1, Student o2) {
