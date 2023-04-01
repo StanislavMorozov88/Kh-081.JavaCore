@@ -3,15 +3,49 @@ package homework05;
 public class Employee {
     private String name;
     private int age;
+    private String position;
     private double salary;
 
-    public Employee(String name, int age, double salary) {
+    public Employee(String name, int age, String position, double salary) {
         this.name = name;
         this.age = age;
+        this.position = position;
         this.salary = salary;
     }
     public String report() {
-        return String.format("Name: %s, Age: %d, Salary: \u20B4 %.2f.", name, age,salary);
+        return String.format("Name: %s, Age: %d, Position: %s, Salary: \u20B4 %.2f.", getName(), getAge(),getPosition(), getSalary());
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 
     @Override
@@ -21,17 +55,5 @@ public class Employee {
                 ", age=" + age +
                 ", salary=" + salary +
                 '}';
-    }
-}
-class DemoEmployee {
-    public static void main(String[] args) {
-        Employee[] employees = new Employee[3];
-        employees[0] = new Employee("Nataly", 34, 37654.7);
-        employees[1] = new Employee("Zahar", 40, 5432.5);
-        employees[2] = new Employee("Mark", 45, 65430.6);
-
-        for (Employee employee : employees) {
-            System.out.println(employee.report());
-        }
     }
 }

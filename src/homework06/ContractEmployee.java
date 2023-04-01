@@ -1,9 +1,11 @@
 package homework06;
 
+import homework09.Student;
+
 import java.util.Comparator;
 import java.util.Objects;
 
-public class ContractEmployee extends Employee implements Payment {
+public class ContractEmployee extends Employee implements Payment, Comparable<Employee> {
 
     private String federalTaxIdMember;
     private double fixedMonthlyPayment;
@@ -17,10 +19,6 @@ public class ContractEmployee extends Employee implements Payment {
         return fixedMonthlyPayment;
     }
 
-    @Override
-    public int compare(Object o1, Object o2) {
-        return 0;
-    }
     public ContractEmployee(String employeeId, String federalTaxIdMember) {
         super(employeeId);
         this.federalTaxIdMember = federalTaxIdMember;
@@ -56,5 +54,8 @@ public class ContractEmployee extends Employee implements Payment {
                 '}';
     }
 
-
+    @Override
+    public int compareTo(Employee o) {
+        return 0;
+    }
 }

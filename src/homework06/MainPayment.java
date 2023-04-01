@@ -11,10 +11,17 @@ public class MainPayment {
         employees[3] = new ContractEmployee("20", "222", 27500.0);
 
         System.out.println(Arrays.toString(employees));
-//        for (Employee employee : employees) {
-//
-//        }
-    //не знаю як викликати метод обрахунку зарплат calculatePay
+        for (Employee emp : employees) {
+            if (emp instanceof Payment) {
+                Payment payEmp = (Payment) emp;
+                System.out.printf("Employee ID: %s, Name: %s, Average Monthly Wage: $%.2f%n", emp.getEmployeeId(), emp.getClass().getSimpleName(), payEmp.calculatePay());
+            } else {
+                System.out.printf("Employee ID: %s, Name: %s (Not a Payment Employee)%n", emp.getEmployeeId(), emp.getClass().getSimpleName());
+            }
+
+
+        }
+
 
         //сортування постараюсь зробити пізніше сама)
 
