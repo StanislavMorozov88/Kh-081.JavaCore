@@ -1,4 +1,4 @@
-package edu05.practice;
+package edu05.homework;
 public class IntegerAnotherTask {
     static int secondPositiveNumber(int[] array){
        int indexOfTheFirstPositive = 0;
