@@ -1,7 +1,6 @@
 package homework12;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Dividing {
@@ -14,9 +13,9 @@ public class Dividing {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.println("Enter value for a:");
-            double a = Double.doubleToLongBits(Double.parseDouble(br.readLine()));
+            double a = Double.parseDouble(br.readLine());
             System.out.println("Enter value for b:");
-            double b = Double.doubleToLongBits(Double.parseDouble(br.readLine()));
+            double b = Double.parseDouble(br.readLine());
             return a / b;
         } catch (NumberFormatException e) {
             return -1;
