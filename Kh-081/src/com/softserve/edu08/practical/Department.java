@@ -58,7 +58,7 @@
 //    }
 //}
 //
-//class Main {
+//class CalculatingSquareRectangle {
 //    public static void main(String[] args) throws CloneNotSupportedException {
 //        Department department1 = new Department("Department1", "Kyiv", "Shevchenka", 10);
 //        Department department2 = department1.clone();
