@@ -15,11 +15,16 @@ public class Employee {
     }
 
     public static Optional<String> getMostPopularName(List<Employee> employeeList) {
+        if (employeeList == null) return Optional.empty();
         return employeeList.stream()
-                .collect(Collectors.groupingBy(Employee::getName,Collectors.counting()))
+                .collect(Collectors.groupingBy(Employee::getName, Collectors.counting()))
                 .entrySet().stream()
                 .max(Map.Entry.comparingByValue())
                 .map(Map.Entry::getKey);
+    }
+
+    public static void printResult(Optional<String> name) {
+        name.ifPresentOrElse(n -> System.out.println("Most popular name: " + n), () -> System.out.println("Null or empty list"));
     }
 
     @Override
@@ -43,10 +48,12 @@ public class Employee {
         List<Employee> emptyList = new ArrayList<>();
 
         Optional<String> mostPopularName = getMostPopularName(employeeList);
-        mostPopularName.ifPresent(s -> System.out.println("Most popular name: " + mostPopularName));
+        printResult(mostPopularName);
 
         Optional<String> emptyMostPopularName = getMostPopularName(emptyList);
-        emptyMostPopularName.ifPresent(s -> System.out.println("Most popular name: " + emptyMostPopularName));
+        printResult(emptyMostPopularName);
 
+        Optional<String> mostPopularForNull = getMostPopularName(null);
+        printResult(mostPopularForNull);
     }
 }
