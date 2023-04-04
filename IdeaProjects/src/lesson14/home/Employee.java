@@ -43,10 +43,10 @@ public class Employee {
         List<Employee> emptyList = new ArrayList<>();
 
         Optional<String> mostPopularName = getMostPopularName(employeeList);
-        System.out.println("Most popular name: " + mostPopularName);
+        mostPopularName.ifPresent(s -> System.out.println("Most popular name: " + mostPopularName));
 
         Optional<String> emptyMostPopularName = getMostPopularName(emptyList);
-        System.out.println("Most popular name: " + emptyMostPopularName);
+        emptyMostPopularName.ifPresent(s -> System.out.println("Most popular name: " + emptyMostPopularName));
 
     }
 }
