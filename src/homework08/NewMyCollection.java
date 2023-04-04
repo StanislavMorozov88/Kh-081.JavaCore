@@ -49,32 +49,30 @@ public class NewMyCollection {
         Collections.sort(list2, Collections.reverseOrder());
         System.out.println(list2);
 
-//        int even = myNewCollection.get(0);
-//        boolean IsEvenNumbersPresentInTheList = false;
-//        for (int i = 0; i < n; i++) {
-//            if (myNewCollection.get(i) % 2 == 0) {
-//                even = myNewCollection.get(i);
-//                IsEvenNumbersPresentInTheList = true;
-//            }
-//        }
-//        if (!IsEvenNumbersPresentInTheList) {
-//            System.out.println("There is no even numbers in myMewCollection");
-//        }
-//
-//        System.out.println("Last even value is: " + even);
-//        myNewCollection.remove(Integer.valueOf(even));
-//        System.out.println(myNewCollection);
-
+        int even = myNewCollection.get(0);
+        boolean IsEvenNumbersPresentInTheList = false;
         for (int i = 0; i < n; i++) {
+            if (myNewCollection.get(i) % 2 == 0) {
+                even = myNewCollection.get(i);
+                IsEvenNumbersPresentInTheList = true;
+            }
+        }
+        if (!IsEvenNumbersPresentInTheList) {
+            System.out.println("There is no even numbers in myMewCollection");
+        }
+
+        System.out.println("Last even value is: " + even);
+        myNewCollection.remove(Integer.valueOf(even));
+        System.out.println(myNewCollection);
+
+        for (int i = 0; i < n-1; i++) {
             if (myNewCollection.get(i) < min) {
                 min = myNewCollection.get(i);
             }
 
         }
-        System.out.println("Min value is: " + min + " " + myNewCollection.indexOf(min));
+        System.out.println("Min value is: " + min + " it is on " + myNewCollection.indexOf(min) + " position");
         myNewCollection.remove(myNewCollection.indexOf(min)+1);
         System.out.println(myNewCollection);
     }
-
-
 }
