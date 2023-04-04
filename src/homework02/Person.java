@@ -1,10 +1,14 @@
 package homework02;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public class Person {
     private String firstName;
     private String lastName;
     private int birthYear;
-    private static int currentYear = 2023;
+    private static int currentYear = LocalDate.now().getYear();
+
     public Person(String olha, String white, int i) {
     }
 

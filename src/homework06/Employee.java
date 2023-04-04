@@ -1,6 +1,6 @@
 package homework06;
 
-public abstract class Employee {
+public abstract class Employee implements Payment {
     private String employeeId;
 
     public Employee(String employeeId) {

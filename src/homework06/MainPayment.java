@@ -11,6 +11,21 @@ public class MainPayment {
         employees[3] = new ContractEmployee("20", "222", 27500.0);
 
         System.out.println(Arrays.toString(employees));
+
+        Arrays.sort(employees, (x, y) -> {
+            if (x.calculatePay() > y.calculatePay()) {
+                return -1;
+            }
+            if (x.calculatePay() < y.calculatePay()) {
+                return 1;
+            }
+            return 0;
+        });
+
+        printEmployees(employees);
+    }
+
+    private static void printEmployees(Employee[] employees) {
         for (Employee emp : employees) {
             if (emp instanceof Payment) {
                 Payment payEmp = (Payment) emp;
@@ -18,13 +33,6 @@ public class MainPayment {
             } else {
                 System.out.printf("Employee ID: %s, Name: %s (Not a Payment Employee)%n", emp.getEmployeeId(), emp.getClass().getSimpleName());
             }
-
-
         }
-
-
-        //сортування постараюсь зробити пізніше сама)
-
-
     }
 }

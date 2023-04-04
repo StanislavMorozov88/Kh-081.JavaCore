@@ -1,11 +1,6 @@
 package homework06;
 
-import homework09.Student;
-
-import java.util.Comparator;
-import java.util.Objects;
-
-public class ContractEmployee extends Employee implements Payment, Comparable<Employee> {
+public class ContractEmployee extends Employee {
 
     private String federalTaxIdMember;
     private double fixedMonthlyPayment;
@@ -54,8 +49,4 @@ public class ContractEmployee extends Employee implements Payment, Comparable<Em
                 '}';
     }
 
-    @Override
-    public int compareTo(Employee o) {
-        return 0;
-    }
 }

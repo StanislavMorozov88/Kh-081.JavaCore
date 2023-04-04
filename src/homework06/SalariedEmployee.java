@@ -1,10 +1,6 @@
 package homework06;
 
-import homework09.Student;
-
-import java.util.Comparator;
-
-public class SalariedEmployee extends Employee implements Payment, Comparable<Employee> {
+public class SalariedEmployee extends Employee {
     private String socialSecurityNumber;
     private double hourlyRate;
     private int numberOfHoursWorked;
@@ -60,9 +56,5 @@ public class SalariedEmployee extends Employee implements Payment, Comparable<Em
                 '}';
     }
 
-    @Override
-    public int compareTo(Employee o) {
-        return 0;
-    }
 }
 
