@@ -23,10 +23,6 @@ public class Employee {
                 .map(Map.Entry::getKey);
     }
 
-    public static void printResult(Optional<String> name) {
-        name.ifPresentOrElse(n -> System.out.println("Most popular name: " + n), () -> System.out.println("Null or empty list"));
-    }
-
     @Override
     public String toString() {
         return "Employee{" +
@@ -48,12 +44,12 @@ public class Employee {
         List<Employee> emptyList = new ArrayList<>();
 
         Optional<String> mostPopularName = getMostPopularName(employeeList);
-        printResult(mostPopularName);
+        mostPopularName.ifPresent(n -> System.out.println("Most popular name: " + mostPopularName.get()));
 
         Optional<String> emptyMostPopularName = getMostPopularName(emptyList);
-        printResult(emptyMostPopularName);
+        emptyMostPopularName.ifPresent(n -> System.out.println("Most popular name: " + emptyMostPopularName.get()));
 
         Optional<String> mostPopularForNull = getMostPopularName(null);
-        printResult(mostPopularForNull);
+        mostPopularForNull.ifPresent(n -> System.out.println("Most popular name: " + mostPopularForNull.get()));
     }
 }
