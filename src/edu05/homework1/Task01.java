@@ -1,4 +1,4 @@
-package edu5.homework1;
+package edu05.homework1;
 
 import java.util.Scanner;
 import java.util.InputMismatchException;

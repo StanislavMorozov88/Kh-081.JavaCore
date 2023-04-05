@@ -1,4 +1,4 @@
-package edu5.homework1;
+package edu05.homework1;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -12,16 +12,16 @@ public class Task03 {
         SCANNER = new Scanner(System.in);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args, int countPositive) {
         int[] array = new int[5];
         fillArrayFromConsole(array);
-        printInfo(array);
+        printInfo(array, countPositive);
 
     }
 
-    private static void printInfo(int[] array) {
+    private static void printInfo(int[] array, int countPositive) {
         System.out.println("Array" + Arrays.toString(array));
-        int secondPositive = getSecondPositive(array);
+        int secondPositive = getSecondPositive(array, countPositive);
         if(secondPositive > 0){
             System.out.println("second positive" + secondPositive + " position");
         }else {
@@ -42,6 +42,7 @@ public class Task03 {
     }
 
     private static int getMinIndex(int[] array) {
+        return 0;
     }
 
     private static int calculateProductEven(int[] array) {
@@ -72,7 +73,7 @@ public class Task03 {
     }
 
 
-    private static int getSecondPositive(int[] array) {
+    private static int getSecondPositive(int[] array, int countPositive) {
         int numberPositive = 0;
         int index = -1;
         while (++index < array.length){
