@@ -1,10 +1,10 @@
-package PracticalTask._10.LessonTask.Task2;
+package PracticalTask._10.Task1;
 
 import java.util.*;
 
 public class Main {
 
-    static ArrayList<Integer> existID = new ArrayList<>();
+    private static ArrayList<Integer> existID = new ArrayList<>();
 
     public static void main(String[] args) {
 
