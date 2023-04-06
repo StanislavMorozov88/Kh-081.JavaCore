@@ -1,4 +1,4 @@
-package PracticalTask._10.LessonTask;
+package PracticalTask._10.LessonTask.Task1;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -81,5 +81,5 @@ public class Task1_HashMap {
         Перебрати та роздрукувати пару значень - entrySet().
         Перебрати та роздрукувати набір з імені продуктів - keySet().
         Перебрати і роздрукувати значення продуктів - values().
-        Для кожного перебора створіть свій метод.
+        Для кожного перебора сІтворіть свій метод.
 */
