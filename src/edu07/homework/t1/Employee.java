@@ -1,9 +1,11 @@
 package edu07.homework.t1;
 
 public abstract class Employee {
-    protected String employeeId;
+    String employeeId;
+    String name;
 
-    public Employee(String employeeId) {
+    Employee(String employeeId, String name) {
         this.employeeId = employeeId;
+        this.name = name;
     }
 }
