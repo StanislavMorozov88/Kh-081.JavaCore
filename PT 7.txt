@@ -1,0 +1,203 @@
+//  Create interface Animal with methods voice() and feed(). Create two classes
+ //Cat and Dog, which implement this interface. Create array of Animal and add some 
+//Cats and Dogs to it. Call voice() and feed() method for all of it
+
+public interface Animal {
+
+     void voice();
+     void feed();
+     void info();
+
+}
+
+class Cat implements Animal {
+    int durationOfSleep;
+
+    public Cat(int durationOfSleep) {
+        this.durationOfSleep = durationOfSleep;
+    }
+
+    public void voice() {
+        System.out.println("Cat say 'Myaaauuuu!' ");
+    }
+
+    @Override
+    public void feed() {
+        System.out.println("Cat eat... " + "\n");
+    }
+
+    @Override
+    public void info() {
+        System.out.println("Info about cats: " + "\n"
+            + "Duration of sleep: "  +  durationOfSleep + " hours");
+    }
+}
+
+class Dog implements Animal {
+
+    double weight ;
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public Dog(double weight) {
+        this.weight = weight;
+    }
+
+    public void voice() {
+        System.out.println("Dog say 'Gufff!' ");
+    }
+
+    @Override
+    public void feed() {
+        System.out.println("Dog eat... ");
+    }
+
+    @Override
+    public void info() {
+        System.out.println("\n" + "Info about dogs: " + "\n"
+                + "Weight: " + weight + "kg");
+    }
+}
+
+class Animals {
+    public static void main(String[] args) {
+        Animal cat1 = new Cat(9);
+        Animal cat2 = new Cat(11);
+        Animal dog1 = new Dog(3.2);
+        Animal dog2 = new Dog(4.9);
+
+        Animal[] animals = {cat1, cat2, dog1, dog2};
+
+        for(Animal animal : animals){
+            animal.info();
+            animal.voice();
+            animal.feed();
+        }
+    }
+}
+
+================================================================
+
+
+//Create next structure. In abstract class Person with property name, declare
+//    abstract method print(). In other classes in body of method print() 
+//     output text “I am a …”. In class Staff declare abstract method salary(). 
+//     In each concrete class create constant TYPE_PERSON. Output type of person in each
+//      constructors. Create array of Person and add some Teachers, Cleaners and Students to it. 
+//       Call method print() for all of it. Call method salary() for all Teachers and Cleaners
+
+public abstract class Person {
+
+    protected String name;
+
+    public Person(String name) {
+        this.name = name;
+    }
+
+    void print() {
+    }
+
+    ;
+
+    void info() {
+    }
+
+    ;
+
+}
+
+abstract class Staff extends Person {
+    public Staff(String name) {
+        super(name);
+    }
+
+    abstract double salary();
+
+}
+
+class Teacher extends Staff {
+    static private final int HOURS_FOR_MONTH = 176;
+    static private final double RATE_PER_HOUR = 94.6;
+    static private final String TYPE_PERSON = "TEACHER";
+
+    public Teacher(String name) {
+        super(name);
+    }
+
+    double salary() {
+        return HOURS_FOR_MONTH * RATE_PER_HOUR;
+    }
+
+    void info() {
+        System.out.println("Info about teacher: " + "\n" + "Name: " + name + "\n" + "Salary: " + salary());
+    }
+
+    @Override
+    void print() {
+        super.print();
+        System.out.println("I am a " + TYPE_PERSON + "\n");
+    }
+}
+
+class Cleaner extends Staff {
+    static private final int HOURS_FOR_MONTH = 165;
+    static private final double RATE_PER_HOUR = 67.01;
+    static final String TYPE_PERSON = "CLEANER";
+
+    public Cleaner(String name) {
+        super(name);
+    }
+
+    double salary() {
+        return HOURS_FOR_MONTH * RATE_PER_HOUR;
+    }
+
+    @Override
+    void print() {
+        super.print();
+        System.out.println("I am a " + TYPE_PERSON + "\n");
+    }
+
+    void info() {
+        System.out.println("Info about cleaner: " + "\n" + "Name: " + name + "\n" + "Salary: " + salary());
+    }
+}
+
+class Student extends Person {
+    static final String TYPE_PERSON = "STUDENT";
+
+    public Student(String name) {
+        super(name);
+    }
+
+    @Override
+    void print() {
+        super.print();
+        System.out.println("I am a " + TYPE_PERSON + "\n");
+    }
+
+    void info() {
+        System.out.println("Info about student: " + "\n" + "Name: " + name);
+    }
+}
+
+
+class Test {
+    public static void main(String[] args) {
+        Staff teachers = new Teacher("Viktor");
+        Staff cleaners = new Cleaner("Marina");
+        Person students = new Student("Kira");
+
+        Person[] persons = {teachers, cleaners, students};
+
+        for (Person person : persons) {
+            person.info();
+            person.print();
+
+        }
+
+
+    }
+}

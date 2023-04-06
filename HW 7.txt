@@ -1,0 +1,362 @@
+//Create Payment interface with the method calculatePay(), the base class Employee 
+//with a string variable employeeld. Create two classes SalariedEmployee and ContractEmployee,
+// which implement interface and are inherited from the base class. 
+//Describe hourly paid workers in the relevant classes (one of the children), and fixed paid 
+//workers (second child). 
+//Describe the string variable socialSecurityNumber in the class SalariedEmployee .
+//Include a description of federalTaxIdmember in the class of ContractEmployee.
+//The calculation formula for the "time-worker“ is: the average monthly 
+//	salary = hourly rate * number of hours worked
+//For employees with a fixed payment the formula is: the average monthly 
+//	salary = fixed monthly payment
+//Create an array of employees and add the employees with different form of payment.
+//Arrange the entire sequence of workers descending the average monthly wage. 
+//Output the employee ID, name, and the average monthly wage for all elements of the list.
+
+
+public interface Payment {
+
+}
+
+abstract class Employee implements Payment {
+    private String employeeId;
+
+    public Employee(String employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    void info() {
+    }
+
+    ;
+
+    abstract double calculatePay();
+
+}
+
+class SalariedEmployee extends Employee implements Payment {
+    private double hourlyRate;
+    private int numberOfHours;
+    private String socialSecurityNumber;
+
+
+    public double getHourlyRate() {
+        return hourlyRate;
+    }
+
+    public void setHourlyRate(double hourlyRate) {
+        this.hourlyRate = hourlyRate;
+    }
+
+    public int getNumberOfHours() {
+        return numberOfHours;
+    }
+
+    public void setNumberOfHours(int numberOfHours) {
+        this.numberOfHours = numberOfHours;
+    }
+
+    public String getSocialSecurityNumber() {
+        return socialSecurityNumber;
+    }
+
+    public void setSocialSecurityNumber(String socialSecurityNumber) {
+        this.socialSecurityNumber = socialSecurityNumber;
+    }
+
+    public SalariedEmployee(String employeeId, double hourlyRate, int numberOfHours, String socialSecurityNumber) {
+        super(employeeId);
+        this.hourlyRate = hourlyRate;
+        this.numberOfHours = numberOfHours;
+        this.socialSecurityNumber = socialSecurityNumber;
+    }
+
+    //Describe hourly paid workers
+
+    public double calculatePay() {
+        return hourlyRate * numberOfHours;
+    }
+
+    public void info() {
+        System.out.println("Info about employee with float salary: " + "\n" + "Emp ID: " + getEmployeeId() + "\n" + "SocialSecurityNumber: " + socialSecurityNumber
+                + "\n" + "Salary: " + calculatePay() + "\n");
+    }
+}
+
+class ContractEmployee extends Employee implements Payment {
+
+    private double fixMonthlyPay;
+    private String federalTaxIdMember;
+
+    public ContractEmployee(String employeeId, double fixMonthlyPay, String federalTaxIdMember) {
+        super(employeeId);
+        this.fixMonthlyPay = fixMonthlyPay;
+        this.federalTaxIdMember = federalTaxIdMember;
+    }
+
+    public double getFixMonthlyPay() {
+        return fixMonthlyPay;
+    }
+
+    public void setFixMonthlyPay(double fixMonthlyPay) {
+        this.fixMonthlyPay = fixMonthlyPay;
+    }
+
+    public String getFederalTaxIdMember() {
+        return federalTaxIdMember;
+    }
+
+    public void setFederalTaxIdMember(String federalTaxIdMember) {
+        this.federalTaxIdMember = federalTaxIdMember;
+    }
+
+    //and fixed paid workers
+    public double calculatePay() {
+        return fixMonthlyPay;
+
+    }
+
+    public void info() {
+        System.out.println("Info about employee with fixed salary: " + "\n" + "Emp ID: " + getEmployeeId() + "\n" + "SocialSecurityNumber: " + federalTaxIdMember
+                + "\n" + "Salary: " + calculatePay() + "\n");
+    }
+
+    ;
+}
+
+class ComplexPayment {
+    public static void main(String[] args) {
+
+        Employee emp1 = new SalariedEmployee("000123", 94.5, 151, "ME34445551");
+        Employee emp2 = new SalariedEmployee("003127", 99.1, 179, "MH36665552");
+        Employee emp3 = new SalariedEmployee("000269", 83.7, 172, "AM04449950");
+        Employee emp4 = new ContractEmployee("001014", 15000.25, "0011106");
+        Employee emp5 = new ContractEmployee("001014", 9000.00, "0012107");
+        Employee emp6 = new ContractEmployee("001014", 11000.67, "0010469");
+
+        Employee[] employee = {emp1, emp2, emp3, emp4, emp5, emp6};
+
+        Employee temp;
+        for (int i = 0; i < employee.length; i++) {
+            for (int j = 0; j < employee.length - 1 - i; j++) {
+                if (employee[j].calculatePay() < employee[j + 1].calculatePay()) {
+                    temp = employee[j];
+                    employee[j] = employee[j + 1];
+                    employee[j + 1] = temp;
+                }
+            }
+        }
+        for (Employee employees : employee) {
+            employees.info();
+        }
+    }
+}
+
+================================================================================
+================================================================================
+
+// Develop and test a program’s structure corresponding to the next schema
+
+
+import java.util.zip.GZIPOutputStream;
+
+public interface Vehicle {
+}
+
+class Passengers{
+    private int passengers;
+
+    public Passengers(int passengers) {
+        this.passengers = passengers;
+    }
+
+    public int getPassengers() {
+        return passengers;
+    }
+
+    public void setPassengers(int passengers) {
+        this.passengers = passengers;
+    }
+
+}
+
+class WaterVehicle extends Passengers implements Vehicle{
+    public WaterVehicle(int passengers) {
+        super(passengers);
+    }
+    void isSailing(){};
+}
+class FlyingVehicle extends Passengers implements Vehicle{
+    public FlyingVehicle(int passengers) {
+        super(passengers);
+    }
+    void fly(){};
+    void land(){};
+}
+
+class GroundVehicle extends Passengers implements Vehicle{
+    public GroundVehicle(int passengers) {
+        super(passengers);
+    }
+    void drive(){};
+}
+
+class Liner extends WaterVehicle{
+    private int floors;
+
+    public int getFloors() {
+        return floors;
+    }
+
+    public void setFloors(int floors) {
+        this.floors = floors;
+    }
+
+    public Liner(int passengers) {
+        super(passengers);
+    }
+    void isSailing(){
+        System.out.println("Liner is sailing in the ocean. ");
+    }
+}
+class Boat extends WaterVehicle{
+    private int volume;
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
+
+    public Boat(int passengers, int volume) {
+        super(passengers);
+        this.volume = volume;
+    }
+    void isSailing(){
+        System.out.println("Boat is sailing in the lake. ");
+    }
+}
+class Plane extends FlyingVehicle{
+    private int  maxDistance;
+
+    public int getMaxDistance() {
+        return maxDistance;
+    }
+
+    public void setMaxDistance(int maxDistance) {
+        this.maxDistance = maxDistance;
+    }
+
+    public Plane(int passengers, int maxDistance) {
+        super(passengers);
+        this.maxDistance = maxDistance;
+    }
+    void fly(){
+        System.out.println("Plane is flying. ");
+    }
+    void land(){
+        System.out.println("Plane completed the flight. ");
+    }
+}
+class Helicopter extends FlyingVehicle{
+    private int weight;
+    private int maxHeight;
+    public Helicopter(int passengers) {
+        super(passengers);
+    }
+    void fly(){
+        System.out.println("Helicopter is flying. ");
+    }
+    void land(){
+        System.out.println("Helicopter completed the flight. ");
+    }
+}
+class Bus extends GroundVehicle{
+    private String route;
+
+    public Bus(int passengers, String route) {
+        super(passengers);
+        this.route = route;
+    }
+
+    public String getRoute() {
+        return route;
+    }
+
+    public void setRoute(String route) {
+        this.route = route;
+    }
+
+    void drive(){
+        System.out.println("Bus is drive on the road.");
+    }
+}
+class Motorcycle extends GroundVehicle{
+    private int maxSpeed;
+
+    public Motorcycle(int passengers, int maxSpeed) {
+        super(passengers);
+        this.maxSpeed = maxSpeed;
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+    void drive(){
+        System.out.println("Motorcycle drive fast.");
+    }
+}
+class Car extends GroundVehicle{
+    private String model;
+
+    public Car(int passengers, String model) {
+        super(passengers);
+        this.model = model;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    void drive(){
+        System.out.println("Car drive by driver.");
+    }
+}
+
+class TestMachine{
+    public static void main(String[] args){
+
+        WaterVehicle liner = new Liner(1456);
+        WaterVehicle boat = new Boat(3, 234);
+        FlyingVehicle plane = new Plane(222, 9000);
+        FlyingVehicle helicopter = new Helicopter(7);
+        GroundVehicle bus = new Bus(46, "Kyiv - Lviv");
+        GroundVehicle motorcycle = new Motorcycle(2, 280);
+        GroundVehicle car = new Car(5, "Audi");
+
+        Vehicle[] vehicles = {liner, boat, plane, helicopter, bus, motorcycle, car};
+		/that`s all..
+    }
+}
+
+
+
+
