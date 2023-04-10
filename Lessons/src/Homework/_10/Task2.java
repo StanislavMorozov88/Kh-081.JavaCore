@@ -36,7 +36,9 @@ public class Task2 {
         map.put("Jones", "Amanda");
 
         System.out.println(map);
-        System.out.println(atLessTwoSameFirstName(map));
+        System.out.println("\n" +
+                "There are at less two persons with the same firstName among these peoples?\n" +
+                "\033[0;36m" +  atLessTwoSameFirstName(map) + "\033[0m\n");
         removeByFirstName(map, "John");
         System.out.println(map);
     }
