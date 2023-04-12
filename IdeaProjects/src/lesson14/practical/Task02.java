@@ -1,6 +1,7 @@
 package lesson14.practical;
 
 import java.util.Arrays;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 
 public class Task02 {
@@ -24,6 +25,16 @@ public class Task02 {
 
         System.out.println("List: " + primes);
         System.out.printf("Number of elements: %d, Min value: %d, Max value: %d, Sum of elements: %d%n", size, min, max, sum);
+
+        //with SummaryStatistics
+        IntSummaryStatistics statistics = primes.stream()
+                .mapToInt(x->x).summaryStatistics();
+
+        System.out.println("List: " + primes);
+        System.out.println("Number of elements: " + statistics.getCount());
+        System.out.println("Min value: " + statistics.getMin());
+        System.out.println("Max value: " + statistics.getMax());
+        System.out.println("Sum of elements: " + statistics.getSum());
 
     }
 }
