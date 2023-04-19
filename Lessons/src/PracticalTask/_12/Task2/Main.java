@@ -1,7 +1,7 @@
-package PracticalTask._11.Task2;
+package PracticalTask._12.Task2;
 
-import PracticalTask._11.Task2.Exceptions.ColorException;
-import PracticalTask._11.Task2.Exceptions.TypeException;
+import PracticalTask._12.Task2.Exceptions.ColorException;
+import PracticalTask._12.Task2.Exceptions.TypeException;
 
 public class Main {
     public static void main(String[] args) {

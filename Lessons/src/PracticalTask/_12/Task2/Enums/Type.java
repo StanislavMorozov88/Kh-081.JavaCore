@@ -1,4 +1,4 @@
-package PracticalTask._11.Task2.Enums;
+package PracticalTask._12.Task2.Enums;
 
 public enum Type {
     White, Red, Blue

@@ -1,9 +1,9 @@
-package PracticalTask._11.Task2;
+package PracticalTask._12.Task2;
 
-import PracticalTask._11.Task2.Enums.Color;
-import PracticalTask._11.Task2.Enums.Type;
-import PracticalTask._11.Task2.Exceptions.ColorException;
-import PracticalTask._11.Task2.Exceptions.TypeException;
+import PracticalTask._12.Task2.Enums.Color;
+import PracticalTask._12.Task2.Enums.Type;
+import PracticalTask._12.Task2.Exceptions.ColorException;
+import PracticalTask._12.Task2.Exceptions.TypeException;
 
 public class Plant {
    private Type type;
