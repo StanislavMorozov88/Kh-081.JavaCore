@@ -1,9 +1,8 @@
 package budget_manager_hyperskill;
 
-import java.io.Serializable;
 import java.util.Arrays;
 
-public enum Category implements Serializable {
+public enum Category{
     FOOD(1, "Food"),
     CLOTHES(2, "Clothes"),
     ENTERTAINMENT(3, "Entertainment"),
