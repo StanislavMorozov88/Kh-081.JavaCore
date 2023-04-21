@@ -7,9 +7,9 @@ import java.util.Scanner;
 public class Task1 {
     static final int[] Months = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-    public static String getEnd(int i) throws Exception{
+    public static String getEnd(int i) throws RuntimeException{
         if (i<1){
-            throw new Exception("number must be bigger than 0");
+            throw new RuntimeException("number must be bigger than 0");
         }
         switch (i){
             case 1 ->{
