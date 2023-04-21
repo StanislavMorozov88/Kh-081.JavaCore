@@ -90,17 +90,7 @@ public class BudgetMenu implements Runnable {
 
     public void saveMenu() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
-            writer.write(String.valueOf(myBudget.getBalance()));
-            writer.write("\n");
-            myBudget.getPurchasesMap().forEach((key, value) -> value.forEach(p -> {
-                try {
-                    writer.write(key.name() + "#");
-                    writer.write(p.getName() + "#");
-                    writer.write(p.getPrice() + "\n");
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }));
+            writer.write(dataToSave());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -196,5 +186,17 @@ public class BudgetMenu implements Runnable {
             purchaseList.forEach(System.out::println);
             System.out.printf("Total sum: $%.2f%n", totalAmount);
         }
+    }
+
+    public String dataToSave() {
+        StringBuilder sb = new StringBuilder(String.valueOf(myBudget.getBalance()));
+        sb.append("\n");
+        myBudget.getPurchasesMap()
+                .forEach((key, value) -> value.forEach(
+                        p -> sb.append(key.name()).append("#")
+                                .append(p.getName()).append("#")
+                                .append(p.getPrice()).append("\n")
+                ));
+        return sb.toString();
     }
 }
