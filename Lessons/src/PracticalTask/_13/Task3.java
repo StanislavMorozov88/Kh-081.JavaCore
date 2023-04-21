@@ -33,7 +33,7 @@ public class Task3 {
     }
 }
 
-//Could have used Predicate but don't want to)))
+//Could have used Predicate but don't want to, so... =)
 @FunctionalInterface
 interface Condition<T> {
     boolean isCorrect(T t);
