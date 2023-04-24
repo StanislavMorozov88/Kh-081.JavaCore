@@ -1,4 +1,4 @@
-package Lesson16;
+package Lesson16.PracticalTasks;
 
 import java.io.*;
 import java.util.Arrays;
